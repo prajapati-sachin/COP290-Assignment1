@@ -1,5 +1,5 @@
-#ifndef Solid_struct
-#define Solid_struct
+#ifndef 3D_struct
+#define 3D_struct
 
 #include <vector>
 using namespace std;
@@ -26,12 +26,5 @@ struct face3d{
 	//vector of a continous loop of 3D edges which contain a face.
 	vector<edge3d> v;
 };
-
-
-
-
-
-
-
 
 #endif
