@@ -15,6 +15,6 @@ class Face3d_List{
 
 	//function to delete an edge from an edgelist
 	void removeFace(face3d face_to_remove);
-}
+};
 
 #endif

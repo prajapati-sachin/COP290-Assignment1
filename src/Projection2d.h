@@ -2,8 +2,8 @@
 #define PROJECTION2D
 
 #include <vector>
-#include "VertexList.h"
-#include "EdgeList.h"
+#include "Vertex2d_List.h"
+#include "Edge2d_List.h"
 
 using namespace std;
 

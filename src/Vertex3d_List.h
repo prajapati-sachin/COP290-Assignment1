@@ -8,13 +8,13 @@ using namespace std;
 
 /** VertexList :- a list of vertices **/
 class Vertex3d_List{
-	vector<coordinates3d> E;
+	vector<coordinate3d> E;
 
 	//function for adding an vertex to vertexlist
 	void addVertex (coordinate3d vertex_to_add);
 
 	//function to delete an vertex from an vertexlist
 	void removeVertex (coordinate3d vertex_to_remove);
-}
+};
 
 #endif
