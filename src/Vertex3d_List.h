@@ -1,5 +1,5 @@
-#ifndef Vertex3d_List
-#define Vertex3d_List
+#ifndef VERTEX3D_LIST
+#define VERTEX3D_LIST
 
 #include <vector>
 #include "3dstruct.h"

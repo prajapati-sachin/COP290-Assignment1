@@ -1,5 +1,5 @@
-#ifndef 2D_struct
-#define 2D_struct
+#ifndef STRUCT_2D
+#define STRUCT_2D
 
 #include <vector>
 using namespace std;
@@ -15,9 +15,9 @@ struct coordinate2d{
 //an edge of 2d solid
 struct edge2d{
 	//first end point
-	coordinate3d x;
+	coordinate2d x;
 	//second end point
-	coordinate3d y;
+	coordinate2d y;
 };
 
 //a face in 2d solid is a vector of 2d edges in which first and last is same

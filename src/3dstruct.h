@@ -1,5 +1,5 @@
-#ifndef 3D_struct
-#define 3D_struct
+#ifndef STRUCT_3D
+#define STRUCT_3D
 
 #include <vector>
 using namespace std;

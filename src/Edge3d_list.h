@@ -1,5 +1,5 @@
-#ifndef Edge3d_List
-#define Edge3d_List
+#ifndef EDGE3d_LIST
+#define EDGE3d_LIST
 
 #include <vector>
 #include "3dstruct.h"

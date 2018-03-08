@@ -1,5 +1,5 @@
-#ifndef Projection2d
-#define Projection2d
+#ifndef PROJECTION2D
+#define PROJECTION2D
 
 #include <vector>
 #include "VertexList.h"

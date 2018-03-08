@@ -1,5 +1,5 @@
-#ifndef Vertex2d_List
-#define Vertex2d_List
+#ifndef VERTEX2D_LIST
+#define VERTEX2D_LIST
 
 #include <vector>
 #include "2dstruct.h"

@@ -1,5 +1,5 @@
-#ifndef Face3d_List
-#define Face3d_List
+#ifndef FACE3d_LIST
+#define FACE3d_LIST
 
 #include <vector>
 #include "3dstruct.h"

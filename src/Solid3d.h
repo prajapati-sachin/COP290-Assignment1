@@ -1,5 +1,5 @@
-#ifndef Solid3d
-#define Solid3d
+#ifndef SOLID3D
+#define SOLID3D
 
 #include <vector>
 #include "Vertex3d_List.h"

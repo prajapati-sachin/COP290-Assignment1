@@ -1,5 +1,5 @@
-#ifndef Edge2d_List
-#define Edge2d_List
+#ifndef EDGE2D_LIST
+#define EDGE2D_LIST
 
 #include <vector>
 #include "2dstruct.h"
@@ -8,6 +8,7 @@ using namespace std;
 
 /** EdgeList :- a list of edges **/
 class Edge2d_List{
+	public:
 	vector<edge2d> E;
 
 	//function for adding an edge to edgelist
@@ -15,6 +16,6 @@ class Edge2d_List{
 
 	//function to delete an edge from an edgelist
 	void removeEdge(edge2d edge_to_remove);
-}
+};
 
 #endif
