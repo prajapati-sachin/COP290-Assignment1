@@ -1,5 +1,5 @@
-#ifndef FACE3d_LIST
-#define FACE3d_LIST
+#ifndef FACE3D_LIST
+#define FACE3D_LIST
 
 #include <vector>
 #include "Common_functions.h"
@@ -31,7 +31,7 @@ class Face3d_List{
 	vector<face3d> F;
 
 	//function to create a face list from a surface list, edge list and vertex list
-	Face3d_List(Surface_list surface,Edge3d_List edge3dList,Vertex3d_List vertexlist);
+	Face3d_List(Surface_List surfacelist,Edge3d_List edge3dList,Vertex3d_List vertexlist);
 	
 	//function for adding an face to facelist
 	void addFace(face3d face_to_add);

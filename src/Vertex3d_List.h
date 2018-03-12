@@ -48,4 +48,7 @@ class Vertex3d_List{
 
 };
 
+//function to check if two 3d_cordinates are equal
+bool equal_3dvertex(Vertex3d vertex3d1,Vertex3d vertex3d2);
+
 #endif

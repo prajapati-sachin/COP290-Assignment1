@@ -58,4 +58,7 @@ class Surface_List{
 
 };
 
+//function to check if two 3d_surfaces are equal
+bool equal_3dsurface(Surface3d surface1, Surface3d surface2);
+
 #endif

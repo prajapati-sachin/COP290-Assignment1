@@ -4,6 +4,7 @@
 #include <vector>
 #include "Common_functions.h"
 #include "Vertex2d_List.h"
+#include "Vertex2d_List.h"
 
 
 using namespace std;
@@ -35,5 +36,8 @@ class Edge2d_List{
 	//function to check presence of an edge in an edgelist
 	bool checkEdge(Edge2d edge_to_check);
 };
+
+//function to check if two 2d_edges are equal
+bool equal_2dedge(Edge2d edge2d1,Edge2d edge2d2);
 
 #endif

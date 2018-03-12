@@ -1,5 +1,5 @@
-#ifndef EDGE3d_LIST
-#define EDGE3d_LIST
+#ifndef EDGE3D_LIST
+#define EDGE3D_LIST
 
 #include <vector>
 #include "Edge2d_List.h"
@@ -45,5 +45,14 @@ class Edge3d_List{
 
 
 };
+
+//function to check if two 3d_edges are equal
+bool equal_3dedge(Edge3d edge3d1,Edge3d edge3d2);
+
+//function to check if there is a common vertex between two edges
+bool check_common_vertex(Edge3d edge1,Edge3d edge2);
+
+//function to find common vertex between two edges
+Vertex3d common_vertex(Edge3d edge3d1,Edge3d edge3d2);
 
 #endif

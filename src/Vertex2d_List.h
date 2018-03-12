@@ -35,4 +35,7 @@ class Vertex2d_List{
 	bool checkVertex(Vertex2d vertex_to_check);
 };
 
+//function to check if two 2d_cordinates are equal
+bool equal_2dvertex(Vertex2d vertex2d1,Vertex2d vertex2d2);
+
 #endif
