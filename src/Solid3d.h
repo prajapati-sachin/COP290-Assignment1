@@ -5,7 +5,7 @@
 #include "Vertex3d_List.h"
 #include "Edge3d_List.h"
 #include "Face3d_List.h"
-
+#include "Projection2d.h"
 
 using namespace std;
 
@@ -24,6 +24,9 @@ class Solid3d{
 	Edge3d_List E;
 	// list of faces
 	Face3d_List F;
+
+	Projection2d make_projections();
+
 };
 
 #endif
