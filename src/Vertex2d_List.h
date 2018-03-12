@@ -2,19 +2,37 @@
 #define VERTEX2D_LIST
 
 #include <vector>
-#include "2dstruct.h"
+#include "Common_functions.h"
 
 using namespace std;
 
+/** Vertex :-  2d coordinate for projections**/
+class Vertex2d{
+	// X cordinate
+	int x;
+	// Y cordinate
+	int y;
+
+	//constructor
+ 	Vertex2d (int x,int y);
+
+};
+
 /** VertexList :- a list of vertices **/
 class Vertex2d_List{
-	vector<coordinate2d> E;
+	vector<Vertex2d> E;
+
+	//construction to create vertex2d_list
+	Vertex2d_List();
 
 	//function for adding an vertex to vertexlist
-	void addVertex (coordinate2d vertex_to_add);
+	void addVertex (Vertex2d vertex_to_add);
 
 	//function to delete an vertex from an vertexlist
-	void removeVertex (coordinate2d vertex_to_remove);
+	void removeVertex (Vertex2d vertex_to_remove);
+
+	//function to check presence of a vertex in a vertexlist
+	bool checkVertex(Vertex2d vertex_to_check);
 };
 
 #endif
