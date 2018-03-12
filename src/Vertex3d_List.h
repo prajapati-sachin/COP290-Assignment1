@@ -22,6 +22,12 @@ class Vertex3d{
  	//constructor to create a vertex from 3 points in respective projections
  	Vertex3d (Vertex2d front_vertex2d, Vertex2d top_vertex2d, Vertex2d side_vertex2d);
 
+ 	Vertex2d point2d_front();
+
+ 	Vertex2d point2d_top();
+
+ 	Vertex2d point2d_side();
+
 
 
 };
