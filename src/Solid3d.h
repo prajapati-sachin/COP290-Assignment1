@@ -25,7 +25,7 @@ class Solid3d{
 	// list of faces
 	Face3d_List F;
 
-	Projection2d make_projections();
+	Projection make_projections();
 
 };
 

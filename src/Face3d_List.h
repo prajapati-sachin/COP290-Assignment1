@@ -20,9 +20,14 @@ class face2d{
 //a face in 3d solid is a vector of edges in which first and last is same
 class face3d{
 	//vector of a continous loop of 3D edges which contain a face.
-	vector<Edge3d> v;
+	vector<Edge3d> loop;
 
+	//constructor for creating a face
 	face3d();
+
+	//constructor to create a face from a surface list, edge list and vertex list
+	face3d(Surface3d surface, Edge3d_List edge3dList,Vertex3d_List vertexlist);
+
 };
 
 
@@ -30,7 +35,7 @@ class face3d{
 class Face3d_List{
 	vector<face3d> F;
 
-	//function to create a face list from a surface list, edge list and vertex list
+	//constructor to create a face list from a surface list, edge list and vertex list
 	Face3d_List(Surface_List surfacelist,Edge3d_List edge3dList,Vertex3d_List vertexlist);
 	
 	//function for adding an face to facelist

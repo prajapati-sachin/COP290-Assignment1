@@ -14,11 +14,22 @@ using namespace std;
  2) A list of edges. Here they are of the form edge2d.
 
 **/
+
 class Projection2d{
 	// list of vertices
 	Vertex2d_List V;
 	// list of edges
 	Edge2d_List E;
 };
+
+//Triplet 
+class Projection{
+	//front-view
+	Projection2d front;
+	//top-view
+	Projection2d top;
+	//side-view
+	Projection2d side;
+}
 
 #endif
