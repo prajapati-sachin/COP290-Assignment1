@@ -24,7 +24,13 @@ class Solid3d{
 	Edge3d_List E;
 	// list of faces
 	Face3d_List F;
-
+	// gives the front projection of 3d solid
+	Projection2d make_front_projections();
+	// gives the top projection of 3d solid
+	Projection2d make_top_projections();
+	// gives the side projection of 3d solid
+	Projection2d make_side_projections();
+	// combines the result of above 3 functions and gives all the views in final projection 
 	Projection make_projections();
 
 };
