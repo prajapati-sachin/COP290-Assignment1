@@ -16,6 +16,7 @@ class Vertex2d{
 	//constructor
  	Vertex2d (int x,int y);
 
+
 };
 
 /** VertexList :- a list of vertices **/
@@ -33,6 +34,7 @@ class Vertex2d_List{
 
 	//function to check presence of a vertex in a vertexlist
 	bool checkVertex(Vertex2d vertex_to_check);
+
 };
 
 //function to check if two 2d_cordinates are equal

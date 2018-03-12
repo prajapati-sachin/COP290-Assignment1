@@ -40,7 +40,7 @@ class Vertex3d_List{
 	Vertex3d_List();
 
 	//constructor to generate vertex3d list from vertex 2d list
-	Vertex3d_List(Vertex2d_List top_2dvertexlist,Vertex2d_List front_2dvertexlist,Vertex2d_List side_2dvertexlist);
+	Vertex3d_List(Vertex2d_List top_2dvertexlist, Vertex2d_List front_2dvertexlist, Vertex2d_List side_2dvertexlist);
 
 	//function for adding an vertex to vertexlist
 	void addVertex (Vertex3d vertex_to_add);
@@ -59,9 +59,6 @@ class Vertex3d_List{
 
 	//function which gives the corresponding list of 2d vertices in side view 
 	Vertex2d_List list_side_view();
-
-	//function which combines all the 3 outputs given by above functions
-	Vertex2d_List list_2dprojection	();
 
 
 };
