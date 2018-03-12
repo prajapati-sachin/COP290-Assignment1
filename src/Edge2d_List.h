@@ -4,7 +4,7 @@
 #include <vector>
 #include "Common_functions.h"
 #include "Vertex2d_List.h"
-#include "Vertex2d_List.h"
+
 
 
 using namespace std;
@@ -15,10 +15,44 @@ class Edge2d{
 	Vertex2d x;
 	//second end point
 	Vertex2d y;
+	//hidden or not
+	bool hidden;
 
 	//constructors
 	Edge2d(Vertex2d x,Vertex2d y);
 
+
+};
+
+/** Normal2d :- a normal(direction) for 2d line  **/
+class Normal2d{
+	//i direction
+	int i;
+	//j direction
+	int j;
+	
+	//construction to construct a normal
+	Normal2d(Edge2d edge1,Edge2d edge2);
+
+};
+
+class Line2d{
+	//direction of the line or slope
+	Normal2d direction;
+	//point on the line
+	Vertex2d point;
+
+	//construction for creating 2dline from two vertices
+	Line2d(Vertex2d vertex1,Vertex2d vertex2);
+
+	//construction for creating 2dline from normal and a vertex
+	Line2d(Normal2d direction,Vertex2d vertex);
+
+	//function to check if point lies on the line
+	bool check_vertex2d_in_line(Vertex2d vertex);
+
+	//function to check if edge lies on the line
+	bool check_edge2d_in_line(Edge2d edge);	
 
 };
 
@@ -39,5 +73,8 @@ class Edge2d_List{
 
 //function to check if two 2d_edges are equal
 bool equal_2dedge(Edge2d edge2d1,Edge2d edge2d2);
+
+//
+Edge2d union_of_two_edges(Edge2d edge2d1,Edge2d edge2d2);
 
 #endif

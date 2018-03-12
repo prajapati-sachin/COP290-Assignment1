@@ -43,6 +43,15 @@ class Edge3d_List{
 	//function to check presence of an edge in an edgelist
 	bool checkEdge(Edge3d edge_to_check);
 
+	//function to create edge list drom given edgekist in 3d and 2d vertex list in front view
+	Edge2d_List Edgelist_frontview(Vertex2d_List vertexlist);
+
+	//function to create edge list drom given edgekist in 3d and 2d vertex list in top view
+	Edge2d_List Edgelist_topview(Vertex2d_List vertexlist);
+
+	//function to create edge list drom given edgekist in 3d and 2d vertex list in side view
+	Edge2d_List Edgelist_sideview(Vertex2d_List vertexlist);
+
 
 };
 
