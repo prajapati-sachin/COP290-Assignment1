@@ -2,7 +2,7 @@
 #define VERTEX2D_LIST
 
 #include <vector>
-#include "Common_functions.h"
+
 
 using namespace std;
 

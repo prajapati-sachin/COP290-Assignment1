@@ -64,7 +64,7 @@ class Vertex3d_List{
 
 };
 
-namespace extra_functions{
+namespace extra_functions_3dvertex{
 	//function to check if two 3d_cordinates are equal
 	bool equal_3dvertex(Vertex3d vertex3d1,Vertex3d vertex3d2);
 	//function which checks given 3 2d coordinated a 3d vertex is possible out of those

@@ -3,21 +3,14 @@
 
 using namespace std;
 
-bool extra_functions_3dvertex::vertex3d_possible(Vertex2d front, Vertex2d top, Vertex2d side){
-	if(front.x==top.x && front.y==side.y)
-		return true;
-	else
-		return false;
-}
 
 
 
 
-Vertex3d::Vertex3d(int x1, int y1, int z1){
-	//constructor for 3d Vertex
+Vertex2d::Vertex2d(int x1, int y1){
+	//constructor for 2d Vertex
 	x=x1;
 	y=y1;
-	z=z1;
 }
 
 Vertex3d::Vertex3d(Vertex2d front, Vertex2d top, Vertex2d side){
