@@ -8,6 +8,7 @@
 
 //normal vector of a plane
 class Normal3d{
+	public:
 	//i direction
 	int i;
 	//j direction
@@ -27,6 +28,7 @@ class Normal3d{
 
 //a surface in 3d solid is a classified by having a normal vector and a vertex
 class Surface3d{
+	public:
 	//normal vector for the surface	
 	Normal3d normal_vector;
 	//coordinate in the surface
@@ -37,13 +39,14 @@ class Surface3d{
 
 	//check if given vertex lies on the given surface
 	bool check_vertex_on_surface(Vertex3d vertex);
-
+	
 	//check if given vertex lies on the given surface
 	bool check_edge3d_on_surface(Edge3d edge);
 
 };
 
 class Surface_List{
+	public:
 	vector<Surface3d> S;
 
 	//constructor for creating surface list for given edge_lists and vertex_list
@@ -63,5 +66,11 @@ class Surface_List{
 
 //function to check if two 3d_surfaces are equal
 bool equal_3dsurface(Surface3d surface1, Surface3d surface2);
+
+//dot_product of two normals
+int dot_product_of_normals(Normal3d normal,Normal3d normal2);
+
+//ax + by +cz for a normal and vertex
+int product_of_normal_vertex(Normal3d normal,Vertex3d vertex);
 
 #endif
