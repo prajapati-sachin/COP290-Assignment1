@@ -15,11 +15,14 @@ class Normal3d{
 	//k direction
 	int k;
 
-	//constructor to create normal from given two edges
-	Normal3d (Edge3d edge3d1,Edge3d edge3d2);
+	//constructor to create normal from given edges
+	Normal3d (Edge3d edge3d);
 
 	//constructor to create normal from given three vertices
 	Normal3d(Vertex3d vertex3d1,Vertex3d vertex3d2,Vertex3d vertex3d3);	
+
+	//constructor to create normal by taking cross product of two normals
+	Normal3d(Normal3d normal1,Normal3d normal2);
 };
 
 //a surface in 3d solid is a classified by having a normal vector and a vertex
