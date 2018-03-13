@@ -18,6 +18,14 @@ class Edge3d{
 	//constructors
 	Edge3d(Vertex3d x,Vertex3d y);
 
+	// projection of edge in frontview
+	Edge2d Edge2d_frontview();
+
+	// projection of edge in topview
+	Edge2d Edge2d_topview();
+
+	// projection of edge in sideview
+	Edge2d Edge2d_sideview();
 
 };
 

@@ -61,6 +61,9 @@ class Edge2d_List{
 	
 	vector<Edge2d> E;
 
+	//constructor for an empty edgeList
+	Edge2d_List();
+
 	//function for adding an edge to edgelist
 	void addEdge(Edge2d edge_to_add);
 
@@ -68,11 +71,17 @@ class Edge2d_List{
 	void removeEdge(Edge2d edge_to_remove);
 
 	//function to check presence of an edge in an edgelist
-	bool checkEdge(Edge2d edge_to_check);
+	bool check_equalEdge(Edge2d edge_to_check);
+
+	//function to check presence of a parallel edge in an edgelist
+	bool check_parallelEdge(Edge2d edge_to_check);
 };
 
 //function to check if two 2d_edges are equal
 bool equal_2dedge(Edge2d edge2d1,Edge2d edge2d2);
+
+//function to check if two edges are parallel
+bool parallel_2dedge(Edge2d edge2d1,Edge2d edge2d2);
 
 //
 Edge2d union_of_two_edges(Edge2d edge2d1,Edge2d edge2d2);
