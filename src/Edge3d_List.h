@@ -10,6 +10,7 @@ using namespace std;
 
 /** Edge3d :- an edge of 3d solid**/
 class Edge3d{
+	public:
 	//first end point
 	Vertex3d x;
 	//second end point

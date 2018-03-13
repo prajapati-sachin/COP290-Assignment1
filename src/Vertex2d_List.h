@@ -8,6 +8,7 @@ using namespace std;
 
 /** Vertex :-  2d coordinate for projections**/
 class Vertex2d{
+	public:
 	// X cordinate
 	int x;
 	// Y cordinate
@@ -21,6 +22,7 @@ class Vertex2d{
 
 /** VertexList :- a list of vertices **/
 class Vertex2d_List{
+	public:
 	vector<Vertex2d> E;
 
 	//construction to create vertex2d_list

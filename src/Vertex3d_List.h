@@ -9,6 +9,7 @@ using namespace std;
 
 /** Vertex :-  3d coordinate for 3d solid **/
 class Vertex3d{
+	public:
 	// X cordinate
 	int x;
 	// Y cordinate
@@ -63,7 +64,12 @@ class Vertex3d_List{
 
 };
 
-//function to check if two 3d_cordinates are equal
-bool equal_3dvertex(Vertex3d vertex3d1,Vertex3d vertex3d2);
+namespace extra_functions{
+	//function to check if two 3d_cordinates are equal
+	bool equal_3dvertex(Vertex3d vertex3d1,Vertex3d vertex3d2);
+	//function which checks given 3 2d coordinated a 3d vertex is possible out of those
+	bool vertex3d_possible(Vertex2d front, Vertex2d top, Vertex2d side);
+}
+
 
 #endif
