@@ -9,6 +9,7 @@
 #include "Surface3d_List.h"
 #include "Face3d_List.h"
 
+namespace Hidden_line_functions{
 
 //marks the hidden 2d egde in the given 2d edge list  hidden or not
 Edge2d_List mark_hidden(Edge2d_List 2dEdgelist ,Edge3d_List 3dEdgelist,Face3d_List 3dFacelist);
@@ -50,7 +51,7 @@ Face2d_List projection_of_face_on_side(Face3d_List 3dFacelist);
 bool check_inside_a_2dface(Vertex2d 2dVertex, Face2d 2dFace);
 
 
-
+}
 
 
 
