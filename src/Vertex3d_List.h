@@ -3,7 +3,7 @@
 
 #include <vector>
 #include "Vertex2d_List.h"
-#include "Common_functions.h"
+
 
 using namespace std;
 
@@ -70,7 +70,7 @@ namespace extra_functions_3dvertex{
 	//function which checks given 3 2d coordinated a 3d vertex is possible out of those
 	bool vertex3d_possible(Vertex2d front, Vertex2d top, Vertex2d side);
 	//function which generates a 3d vertex from 3 2d coordinates
-	Vertex3d vetex3d_generate(Vertex2d front, Vertex2d top, Vertex2d side);
+	Vertex3d vertex3d_generate(Vertex2d front, Vertex2d top, Vertex2d side);
 	//function which extends the above function to list
 	Vertex3d_List vetex3dlist_generate(Vertex2d_List front_list, Vertex2d_List top_list, Vertex2d_List side_list);
 	//function which given a 3d vertex vector and a vertex gives the index at which vertex is present

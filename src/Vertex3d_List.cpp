@@ -4,21 +4,23 @@
 using namespace std;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //first defining the extra functions as they are used just after this
-bool extra_functions_3dvertex::vertex3d_possible(Vertex2d front, Vertex2d top, Vertex2d side){
-	if(front.x==top.x && top.y==side.x && side.y==front.y)
-		return true;
-	else
-		return false;
-}
+namespace extra_functions_3dvertex{
+	bool vertex3d_possible(Vertex2d front, Vertex2d top, Vertex2d side){
+		if(front.x==top.x && top.y==side.x && side.y==front.y)
+			return true;
+		else
+			return false;
+	}
 
-bool extra_functions_3dvertex::equal_3dvertex(Vertex3d v1,Vertex3d v2){
-	if(v1.x==v2.x && v1.y==v2.y && v1.z==v2.z)
-		return true;
-	else
-		return false;
-}
+	bool equal_3dvertex(Vertex3d v1,Vertex3d v2){
+		if(v1.x==v2.x && v1.y==v2.y && v1.z==v2.z)
+			return true;
+		else
+			return false;
+	}
 
-Vertex3d extra_functions_3dvertex::vertex3d_generate(Vertex2d front, Vertex2d top, Vertex2d side){
+
+	Vertex3d vertex3d_generate(Vertex2d front, Vertex2d top, Vertex2d side){
 		int x1,y1,z1;
 		if(extra_functions_3dvertex::vertex3d_possible(front, top ,side)){
 		x1=(front.x);
@@ -27,9 +29,10 @@ Vertex3d extra_functions_3dvertex::vertex3d_generate(Vertex2d front, Vertex2d to
 		Vertex3d temp(x1,y1,z1);
 		return temp;		
 		}
-}
+	}
 
-Vertex3d_List extra_functions_3dvertex::vetex3dlist_generate(Vertex2d_List front_list, Vertex2d_List top_list, Vertex2d_List side_list){
+
+	Vertex3d_List vetex3dlist_generate(Vertex2d_List front_list, Vertex2d_List top_list, Vertex2d_List side_list){
 		vector<Vertex2d> front = front_list.E;
 		vector<Vertex2d> top = top_list.E;
 		vector<Vertex2d> side = side_list.E;
@@ -45,6 +48,7 @@ Vertex3d_List extra_functions_3dvertex::vetex3dlist_generate(Vertex2d_List front
 		}
 
 		return accumulator_list;
+	}
 }
 
 int vertex_index(vector<Vertex3d> vlist, Vertex3d v){
