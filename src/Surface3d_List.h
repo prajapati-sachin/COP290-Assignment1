@@ -39,7 +39,7 @@ class Surface3d{
 
 	//check if given vertex lies on the given surface
 	bool check_vertex_on_surface(Vertex3d vertex);
-	
+
 	//check if given vertex lies on the given surface
 	bool check_edge3d_on_surface(Edge3d edge);
 
@@ -63,6 +63,9 @@ class Surface_List{
 
 
 };
+
+//function to check if two normals are equal
+bool equal_normals(Normal3d normal1,Normal3d normal2);
 
 //function to check if two 3d_surfaces are equal
 bool equal_3dsurface(Surface3d surface1, Surface3d surface2);

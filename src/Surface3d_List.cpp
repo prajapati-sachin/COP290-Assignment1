@@ -58,27 +58,58 @@ bool Surface3d::check_edge3d_on_surface(Edge3d edge){
 /////////////////////////////////////////////////////////////
 //Implementation of Surface3d_List class
 void Surface_List::addSurface(Surface s){
-	E.push_back(s);
+	S.push_back(s);
 }
 
 void Surface_List::removeSurface(Surface s){
-	if(Surface_List::checkSurface(Surface s){
-
-
+	if(Surface_List::checkSurface(Surface s)){
+		for(int i=0;i<S.size();i++){
+			if(equal_3dsurface(S[i], s)){
+				S.erase(i);
+			}
+		}
 	}
 }
 
 bool Surface_List::checkVertex(Surface s){
 	bool result=false;
-	for(int i=0;i<E.size();i++){
-		if(equal_3dsurface(E[i], s)){
+	for(int i=0;i<S.size();i++){
+		if(equal_3dsurface(S[i], s)){
 			result=true;
 		}
 	}
 	return result;
 }
 
+/////////////////////////////////////////////////////////////
+//Implementation of extra functions
 
+//function to check if two normals are equal
+bool equal_normals(Normal3d normal1,Normal3d normal2){
+	return ((normal1.i/normal2.i)==(normal1.j/normal2.j)&&(normal1.i/normal2.i)==(normal1.k/normal2.k));
+}
+
+
+//function to check if two 3d_surfaces are equal
+bool equal_3dsurface(Surface3d surface1, Surface3d surface2){
+	bool temp = false;	
+	if(equal_normals(surface1.normal_vector,surface2.normal_vector)){
+		if(product_of_normal_vertex(Surface1.normal_vector,Surface1.surface_vertex)==product_of_normal_vertex(Surface2.normal_vector,Surface2.surface_vertex)){
+			temp = true;
+		}
+	}
+	return temp;
+}
+
+//dot_product of two normals
+int dot_product_of_normals(Normal3d normal,Normal3d normal2){
+	return ((normal1.i*normal2.i)+(normal1.j*normal2.j)+(normal1.k*normal2.k));
+}
+
+//ax + by +cz for a normal and vertex
+int product_of_normal_vertex(Normal3d normal,Vertex3d vertex){
+	return ((normal.i*vertex.x)+(normal.j*vertex.y)+(normal.k*vertex.z));
+}
 
 
 
