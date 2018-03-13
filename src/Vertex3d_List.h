@@ -35,13 +35,14 @@ class Vertex3d{
 
 
 class Vertex3d_List{
+public:
 	vector<Vertex3d> E;
-
+	//constructor not needed in this class
 	//constructors
-	Vertex3d_List();
+	//Vertex3d_List();
 
-	//constructor to generate vertex3d list from vertex 2d list
-	Vertex3d_List(Vertex2d_List top_2dvertexlist, Vertex2d_List front_2dvertexlist, Vertex2d_List side_2dvertexlist);
+	// //constructor to generate vertex3d list from vertex 2d list
+	// Vertex3d_List(Vertex2d_List top_2dvertexlist, Vertex2d_List front_2dvertexlist, Vertex2d_List side_2dvertexlist);
 
 	//function for adding an vertex to vertexlist
 	void addVertex (Vertex3d vertex_to_add);
