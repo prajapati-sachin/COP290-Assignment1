@@ -33,3 +33,52 @@ Normal3d::Normal3d(Vertex3d vertex3d1,Vertex3d vertex3d2,Vertex3d vertex3d3){
 	j = normal.j;
 	k = normal.k; 
 }	
+
+
+////////////////////////////////////////////////////////////
+//Implementation of Surface3d class
+
+//constructor to create a surface from given pair of edges and vertex
+Surface3d::Surface3d(Edge3d edge3d1,Edge3d edge3d2,Vertex3d vertex){
+	Normal3d normal1 = Normal3d::Normal3d (edge3d1);
+	Normal3d normal2 = Normal3d::Normal3d (edge3d2);
+	normal_vector = Normal3d::Normal3d(normal1,normal2);
+	surface_vertex = vertex;
+}
+
+bool Surface3d::check_vertex_on_surface(Vertex3d vertex){
+	return (product_of_normal_vertex(normal_vector,surface_vertex)==product_of_normal_vertex(normal_vector,vertex));
+}
+
+bool Surface3d::check_edge3d_on_surface(Edge3d edge){
+	return (Surface3d::check_vertex_on_surface(edge.x)&&Surface3d::check_vertex_on_surface(edge.y));
+}
+
+
+/////////////////////////////////////////////////////////////
+//Implementation of Surface3d_List class
+void Surface_List::addSurface(Surface s){
+	E.push_back(s);
+}
+
+void Surface_List::removeSurface(Surface s){
+	if(Surface_List::checkSurface(Surface s){
+
+
+	}
+}
+
+bool Surface_List::checkVertex(Surface s){
+	bool result=false;
+	for(int i=0;i<E.size();i++){
+		if(equal_3dsurface(E[i], s)){
+			result=true;
+		}
+	}
+	return result;
+}
+
+
+
+
+
