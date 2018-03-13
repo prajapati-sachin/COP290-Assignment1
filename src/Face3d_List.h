@@ -17,6 +17,25 @@ class face2d{
 	face2d();
 };
 
+/** FaceList :- a list of 2dfaces **/
+class Face2d_List{
+	vector<face2d> F;
+
+	//constructor to create a face list from a surface list, edge list and vertex list
+	Face2d_List();
+	
+	//functio2 for adding an face to facelist
+	void addFace(face2d face_to_add);
+
+	//function to delete a face from an facelist
+	void removeFace(face2d face_to_remove);
+
+	//function to check a face in a facelist
+	bool checkFace(face2d face_to_chexk);
+
+
+};
+
 //a face in 3d solid is a vector of edges in which first and last is same
 class face3d{
 	//vector of a continous loop of 3D edges which contain a face.
@@ -29,7 +48,16 @@ class face3d{
 	face3d(Surface3d surface, Edge3d_List edge3dList,Vertex3d_List vertexlist);
 
 	//gives the surface of the 3d face
-	Surface3d();
+	Surface3d correspondin_surface();
+
+	//the function returns a 2d projection of a face in front plane
+	Face2d front_projection();
+
+	//the function returns a 2d projection of a face in top plane
+	Face2d top_projection();
+
+	//the function returns a 2d projection of a face in side plane
+	Face2d side_projection();
 
 };
 
@@ -47,8 +75,8 @@ class Face3d_List{
 	//function to delete a face from an facelist
 	void removeFace(face3d face_to_remove);
 
-
-
+	//function to check a face in a facelist
+	bool checkFace(face3d face_to_chexk);
 };
 
 #endif
