@@ -5,14 +5,14 @@ using namespace std;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //first defining the extra functions as they are used just after this
 bool extra_functions_3dvertex::vertex3d_possible(Vertex2d front, Vertex2d top, Vertex2d side){
-	if(v1.x==v2.x && v1.y==v2.y && v1.z==v2.z)
+	if(front.x==top.x && top.y==side.x && side.y==front.y)
 		return true;
 	else
 		return false;
 }
 
 bool extra_functions_3dvertex::equal_3dvertex(Vertex3d v1,Vertex3d v2){
-	if(front.x==top.x && front.y==side.y)
+	if(v1.x==v2.x && v1.y==v2.y && v1.z==v2.z)
 		return true;
 	else
 		return false;
@@ -33,19 +33,12 @@ Vertex3d_List extra_functions_3dvertex::vetex3dlist_generate(Vertex2d_List front
 		vector<Vertex2d> front = front_list.E;
 		vector<Vertex2d> top = top_list.E;
 		vector<Vertex2d> side = side_list.E;
-		Vertex3d_List accumulator_list();
+		Vertex3d_List accumulator_list;
 		for(int i=0;i<front.size();i++){
 			for(int j=0;j<top.size();j++){
 				for(int k=0;k<side.size();k++){
-					int x_front= front[i].x;
-					int y_front= front[i].y;
-					int x_top= top[j].x;
-					int y_top= top[j].y;
-					int x_side= side[k].x; 
-					int y_side= side[k].y;
-					if(x_front==x_top && y_top == x_side && y_side==y_front){
-						Vertex3d temp(x1, front[i].y, (-1)*(top[j].z));
-						accumulator_list.addVertex(temp);
+					 if(extra_functions_3dvertex::vertex3d_possible(front[i],top[j],side[k])){
+						accumulator_list.addVertex(extra_functions_3dvertex::vertex3d_generate(front[i],top[j],side[k]));
 					}
 				}
 			}
@@ -54,6 +47,13 @@ Vertex3d_List extra_functions_3dvertex::vetex3dlist_generate(Vertex2d_List front
 		return accumulator_list;
 }
 
+int vertex_index(vector<Vertex3d> vlist, Vertex3d v){
+	int result=-1;
+	for(int i=0;i<vlist.size();i++){
+
+	}
+	return result;
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Implementation of Vertex3d class
@@ -111,10 +111,17 @@ void Vertex3d_List::addVertex(Vertex3d v){
 }
 
 void Vertex3d_List::removeVertex(Vertex3d v){
-	E.pop_back(v);
+	if(checkVertex(v)){
+
+	}
 }
 
-bool Vertex3d_List::checkVertex(Vertex3d){
+bool Vertex3d_List::checkVertex(Vertex3d v){
+	bool result=false;
 	for(int i=0;i<E.size();i++){
+		if(extra_functions_3dvertex::equal_3dvertex(E[i], v)){
+			result=true;
+		}
 	}
+	return result;
 }
