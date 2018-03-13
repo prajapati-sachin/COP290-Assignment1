@@ -66,9 +66,14 @@ class Vertex3d_List{
 
 namespace extra_functions_3dvertex{
 	//function to check if two 3d_cordinates are equal
-	bool equal_3dvertex(Vertex3d vertex3d1,Vertex3d vertex3d2);
+	bool equal_3dvertex(Vertex3d v1,Vertex3d v2);
 	//function which checks given 3 2d coordinated a 3d vertex is possible out of those
 	bool vertex3d_possible(Vertex2d front, Vertex2d top, Vertex2d side);
+	//function which generates a 3d vertex from 3 2d coordinates
+	Vertex3d vetex3d_generate(Vertex2d front, Vertex2d top, Vertex2d side);
+	//function which extends the above function to list
+	Vertex3d_List vetex3dlist_generate(Vertex2d_List front_list, Vertex2d_List top_list, Vertex2d_List side_list);
+	
 }
 
 
