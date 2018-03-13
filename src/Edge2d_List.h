@@ -21,6 +21,9 @@ class Edge2d{
 	//constructors
 	Edge2d(Vertex2d x,Vertex2d y);
 
+	//function to check if point lies inside the edge
+	bool check_inside(Vertex2d 2dvertex)
+
 
 };
 
@@ -85,6 +88,12 @@ bool parallel_2dedge(Edge2d edge2d1,Edge2d edge2d2);
 
 //function to check if two lines are equal
 bool equal_2dline(Line2d line1,Line2d line2);
+
+//function to check if two lines are parallel
+bool parall_2dline(Line2d line1,Line2d line2);
+
+//gives intersection of 2d lines
+Vertex2d intersection_of_2dlines(Line2d line1,Line2d line2);
 
 //function to take union of two parallel edges
 Edge2d union_of_two_edges(Edge2d edge2d1,Edge2d edge2d2);
