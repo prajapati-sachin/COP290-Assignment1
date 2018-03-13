@@ -28,6 +28,9 @@ class face3d{
 	//constructor to create a face from a surface list, edge list and vertex list
 	face3d(Surface3d surface, Edge3d_List edge3dList,Vertex3d_List vertexlist);
 
+	//gives the surface of the 3d face
+	Surface3d();
+
 };
 
 
