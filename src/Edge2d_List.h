@@ -83,7 +83,10 @@ bool equal_2dedge(Edge2d edge2d1,Edge2d edge2d2);
 //function to check if two edges are parallel
 bool parallel_2dedge(Edge2d edge2d1,Edge2d edge2d2);
 
-//
+//function to check if two lines are equal
+bool equal_2dline(Line2d line1,Line2d line2);
+
+//function to take union of two parallel edges
 Edge2d union_of_two_edges(Edge2d edge2d1,Edge2d edge2d2);
 
 #endif
