@@ -30,6 +30,6 @@ class Projection{
 	Projection2d top;
 	//side-view
 	Projection2d side;
-}
+};
 
 #endif
