@@ -11,15 +11,22 @@ using namespace std;
 
 /** Edge2d :- an edges for 2d  **/
 class Edge2d{
+public:
 	//first end point
-	Vertex2d x;
+	Vertex2d v1;
 	//second end point
-	Vertex2d y;
+	Vertex2d v2;
 	//hidden or not
 	bool hidden;
 
 	//constructors
-	Edge2d(Vertex2d x,Vertex2d y);
+	Edge2d(Vertex2d vertex1,Vertex2d vertex2);
+
+	//function to make edge hidden
+	make_hidden();
+
+	//function to make edge visible
+	make_visible();
 
 	//function to check if point lies inside the edge
 	bool check_inside(Vertex2d 2dvertex)
@@ -29,6 +36,7 @@ class Edge2d{
 
 /** Normal2d :- a normal(direction) for 2d line  **/
 class Normal2d{
+public:
 	//i direction
 	int i;
 	//j direction
