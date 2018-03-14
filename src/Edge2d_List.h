@@ -43,11 +43,12 @@ public:
 	int j;
 	
 	//construction to construct a normal
-	Normal2d(Edge2d edge1,Edge2d edge2);
+	Normal2d(Vertex2d vertex1, Vertex2d vertex2);
 
 };
 
 class Line2d{
+public:
 	//direction of the line or slope
 	Normal2d direction;
 	//point on the line
@@ -57,7 +58,7 @@ class Line2d{
 	Line2d(Vertex2d vertex1,Vertex2d vertex2);
 
 	//construction for creating 2dline from normal and a vertex
-	Line2d(Normal2d direction,Vertex2d vertex);
+	Line2d(Normal2d normal,Vertex2d vertex);
 
 	//function to check if point lies on the line
 	bool check_vertex2d_in_line(Vertex2d vertex);
@@ -69,7 +70,8 @@ class Line2d{
 
 /** EdgeList :- a list of edges **/
 class Edge2d_List{
-	
+public:
+	//List	
 	vector<Edge2d> E;
 
 	//constructor for an empty edgeList
@@ -98,12 +100,15 @@ bool parallel_2dedge(Edge2d edge2d1,Edge2d edge2d2);
 bool equal_2dline(Line2d line1,Line2d line2);
 
 //function to check if two lines are parallel
-bool parall_2dline(Line2d line1,Line2d line2);
+bool parallel_2dline(Line2d line1,Line2d line2);
 
 //gives intersection of 2d lines
 Vertex2d intersection_of_2dlines(Line2d line1,Line2d line2);
 
 //function to take union of two parallel edges
 Edge2d union_of_two_edges(Edge2d edge2d1,Edge2d edge2d2);
+
+//ax + by  for a normal and vertex
+int product_of_normal_vertex_in2d(Normal2d normal,Vertex2d vertex);
 
 #endif
