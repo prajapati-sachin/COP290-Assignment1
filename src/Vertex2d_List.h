@@ -6,6 +6,7 @@
 
 using namespace std;
 
+extern int DELTA;
 /** Vertex :-  2d coordinate for projections**/
 class Vertex2d{
 	public:
@@ -23,23 +24,24 @@ class Vertex2d{
 /** VertexList :- a list of vertices **/
 class Vertex2d_List{
 	public:
-	vector<Vertex2d> E;
+	vector<Vertex2d> V;
 
 	//construction to create vertex2d_list
 	Vertex2d_List();
 
 	//function for adding an vertex to vertexlist
-	void addVertex (Vertex2d vertex_to_add);
-
-	//function to delete an vertex from an vertexlist
-	void removeVertex (Vertex2d vertex_to_remove);
+	void addVertex (Vertex2d v);
 
 	//function to check presence of a vertex in a vertexlist
-	bool checkVertex(Vertex2d vertex_to_check);
+	bool checkVertex(Vertex2d v);
+
+	//function to delete a vertex from a vertexlist
+	void removeVertex (Vertex2d v);
+
 
 };
 
 //function to check if two 2d_cordinates are equal
-bool equal_2dvertex(Vertex2d vertex2d1,Vertex2d vertex2d2);
+bool equal_2dvertex(Vertex2d v1,Vertex2d v2);
 
 #endif

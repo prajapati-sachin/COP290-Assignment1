@@ -62,7 +62,7 @@ void Surface_List::addSurface(Surface s){
 }
 
 void Surface_List::removeSurface(Surface s){
-	if(Surface_List::checkSurface(Surface s)){
+	if(Surface_List::checkSurface(s)){
 		for(int i=0;i<S.size();i++){
 			if(equal_3dsurface(S[i], s)){
 				S.erase(i);

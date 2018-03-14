@@ -44,13 +44,13 @@ public:
 	// Vertex3d_List(Vertex2d_List top_2dvertexlist, Vertex2d_List front_2dvertexlist, Vertex2d_List side_2dvertexlist);
 
 	//function for adding an vertex to vertexlist
-	void addVertex (Vertex3d vertex_to_add);
+	void addVertex (Vertex3d v);
 
 	//function to delete an vertex from an vertexlist
-	void removeVertex (Vertex3d vertex_to_remove);
+	void removeVertex (Vertex3d v);
 
 	//function to check presence of a vertex in a vertexlist
-	bool checkVertex(Vertex3d vertex_to_check);
+	bool checkVertex(Vertex3d v);
 	
 	//function which gives the corresponding list of 2d vertices in top view 
 	Vertex2d_List list_top_view();
