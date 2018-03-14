@@ -25,9 +25,14 @@ Edge2d::make_visible(){
 
 //function to check if point lies inside the edge
 bool Edge2d::check_inside(Vertex2d 2dvertex){
-	bool x_bounded = (((v1.x<2dvertex.x)&&(2dvertex.x<v2.x))||((v1.x>2dvertex.x)&&(2dvertex.x>v2.x)));
-	bool y_bounded = (((v1.y<2dvertex.y)&&(2dvertex.y<v2.y))||((v1.y>2dvertex.y)&&(2dvertex.y>v2.y)));
-	return (x_bounded&&y_bounded);
+	int x_min = min(v1.x,v2.x);
+	int x_max = max(v1.x,v2.x);
+	int y_min = min(v1.y,v2.y);
+	int y_max = max(v1.y,v2.y);
+
+	bool x_bound = (x_min<=2dvertex.x)&&(2dvertex.x<=x_max);;
+	bool y_bound = (y_min<=2dvertex.y)&&(2dvertex.y<=y_max);;
+	return (x_bound&&y_bound);
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -141,11 +146,39 @@ bool equal_direction(Normal2d normal1,Normal2d normal2){
 
 //gives intersection of 2d lines
 Vertex2d intersection_of_2dlines(Line2d line1,Line2d line2){
-	
+	int a1 = line1.direction,i;
+	int b1 = line1.direction,j;
+	int c1 = product_of_normal_vertex_in2d(line1.direction,line1.point);
+	int a2 = line2.direction,i;
+	int b2 = line2.direction,j;
+	int c2 = product_of_normal_vertex_in2d(line2.direction,line2.point);
+	int x = (c1*b2-c2*b1)/(a1*b2-a2*b1);
+	int y = (c1*a2-c2*a1)/(b1*a2-b2*a1);
+	return Vertex2d::Vertex2d(x,y);
 }
 
 //function to take union of two parallel edges
 Edge2d union_of_two_edges(Edge2d edge2d1,Edge2d edge2d2){
+	Edge2d temp;
+	if(edge2d1.Edge2d::check_inside(edge2d2.v1)&&edge2d1.Edge2d::check_inside(edge2d2.v2))
+		temp = edge2d1;
+	else if(edge2d2.Edge2d::check_inside(edge2d1.v1)&&edge2d2.Edge2d::check_inside(edge2d1.v2))
+		temp = edge2d2;
+	else if(edge2d1.Edge2d::check_inside(edge2d2.v1)&&edge2d2.Edge2d::check_inside(edge2d1.v1)){
+		temp.v1 = edge2d2.v1;
+		temp.v2 = edge2d1.v1;
+	}else if(edge2d1.Edge2d::check_inside(edge2d2.v1)&&edge2d2.Edge2d::check_inside(edge2d1.v2)){
+		temp.v1 = edge2d2.v1;
+		temp.v2 = edge2d1.v2;
+	}else if(edge2d1.Edge2d::check_inside(edge2d2.v2)&&edge2d2.Edge2d::check_inside(edge2d1.v1)){
+		temp.v1 = edge2d2.v2;
+		temp.v2 = edge2d1.v1;
+	}else if(edge2d1.Edge2d::check_inside(edge2d2.v2)&&edge2d2.Edge2d::check_inside(edge2d1.v2)){
+		temp.v1 = edge2d2.v2;
+		temp.v2 = edge2d1.v2;
+	}
+
+	return temp;
 
 }
 
