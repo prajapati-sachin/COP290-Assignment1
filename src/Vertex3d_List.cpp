@@ -1,5 +1,4 @@
 #include "Vertex3d_List.h"
-#include "Vertex2d_List.h"
 
 using namespace std;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -33,9 +32,9 @@ namespace extra_functions_3dvertex{
 
 
 	Vertex3d_List vetex3dlist_generate(Vertex2d_List front_list, Vertex2d_List top_list, Vertex2d_List side_list){
-		vector<Vertex2d> front = front_list.E;
-		vector<Vertex2d> top = top_list.E;
-		vector<Vertex2d> side = side_list.E;
+		vector<Vertex2d> front = front_list.V;
+		vector<Vertex2d> top = top_list.V;
+		vector<Vertex2d> side = side_list.V;
 		Vertex3d_List accumulator_list;
 		for(int i=0;i<front.size();i++){
 			for(int j=0;j<top.size();j++){
@@ -49,16 +48,17 @@ namespace extra_functions_3dvertex{
 
 		return accumulator_list;
 	}
-}
-
-int vertex_index(vector<Vertex3d> vlist, Vertex3d v){
-	int result=-1;
-	for(int i=0;i<vlist.size();i++){
-
+	
+	int vertex_index(vector<Vertex3d> vlist, Vertex3d v){
+		int result=-1;
+		for(int i=0;i<vlist.size();i++){
+			if(equal_3dvertex(vlist[i],v)){
+				result=i;
+			}
+		}
+		return result;
 	}
-	return result;
 }
-
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Implementation of Vertex3d class
 Vertex3d::Vertex3d(int x1, int y1, int z1){
@@ -110,13 +110,15 @@ Vertex2d Vertex3d::point2d_side(){
 	return temp;
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//Implementation of class Vertex3d_List.h
 void Vertex3d_List::addVertex(Vertex3d v){
 	E.push_back(v);
 }
 
 void Vertex3d_List::removeVertex(Vertex3d v){
 	if(checkVertex(v)){
-
+		int i = extra_functions_3dvertex::vertex_index(E,v);
+		E.erase(E.begin()+i);
 	}
 }
 
@@ -129,3 +131,31 @@ bool Vertex3d_List::checkVertex(Vertex3d v){
 	}
 	return result;
 }
+
+Vertex2d_List Vertex3d_List::list_top_view(){
+	Vertex2d_List top_projections;
+	for(int i=0;i<E.size();i++){
+		Vertex3d temp = E[i];
+		Vertex2d projection = temp.point2d_top();
+		(top_projections.V).push_back(projection);
+	}
+}
+
+Vertex2d_List Vertex3d_List::list_front_view(){
+	Vertex2d_List front_projections;
+	for(int i=0;i<E.size();i++){
+		Vertex3d temp = E[i];
+		Vertex2d projection = temp.point2d_front();
+		(front_projections.V).push_back(projection);
+	}
+}
+
+Vertex2d_List Vertex3d_List::list_side_view(){
+	Vertex2d_List side_projections;
+	for(int i=0;i<E.size();i++){
+		Vertex3d temp = E[i];
+		Vertex2d projection = temp.point2d_side();
+		(side_projections.V).push_back(projection);
+	}	
+}
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
