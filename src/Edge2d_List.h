@@ -60,6 +60,9 @@ public:
 	//construction for creating 2dline from normal and a vertex
 	Line2d(Normal2d normal,Vertex2d vertex);
 
+	//construction for creating 2dline from an edge
+	Line2d(Edge2d edge);
+
 	//function to check if point lies on the line
 	bool check_vertex2d_in_line(Vertex2d vertex);
 
@@ -91,16 +94,19 @@ public:
 };
 
 //function to check if two 2d_edges are equal
-bool equal_2dedge(Edge2d edge2d1,Edge2d edge2d2);
+bool equal_2dEdge(Edge2d e1,Edge2d e2);
 
 //function to check if two edges are parallel
-bool parallel_2dedge(Edge2d edge2d1,Edge2d edge2d2);
+bool parallel_2dEdge(Edge2d e1,Edge2d e2);
 
 //function to check if two lines are equal
 bool equal_2dline(Line2d line1,Line2d line2);
 
 //function to check if two lines are parallel
 bool parallel_2dline(Line2d line1,Line2d line2);
+
+//function to check if two directions/normal2d are equal
+bool equal_direction(Normal2d normal1,Normal2d normal2)
 
 //gives intersection of 2d lines
 Vertex2d intersection_of_2dlines(Line2d line1,Line2d line2);

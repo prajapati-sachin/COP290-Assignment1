@@ -44,7 +44,7 @@ Normal2d::Normal2d(Vertex2d vertex1, Vertex2d vertex2){
 
 //construction for creating 2dline from two vertices
 Line2d::Line2d(Vertex2d vertex1,Vertex2d vertex2){
-	direction = Normal2d::Normal2d(vertex1.vertex2);
+	direction = Normal2d::Normal2d(vertex1,vertex2);
 	point = vertex1;
 }
 
@@ -52,6 +52,12 @@ Line2d::Line2d(Vertex2d vertex1,Vertex2d vertex2){
 Line2d::Line2d(Normal2d normal,Vertex2d vertex){
 	direction = normal;
 	point = vertex;
+}
+
+//construction for creating 2dline from an edge
+Line2d::Line2d(Edge2d edge){
+	direction = Normal2d::Normal2d(edge.v1,edge.v2);
+	point = edge.v1;
 }
 
 //function to check if point lies on the line
@@ -67,8 +73,83 @@ bool Line2d::check_edge2d_in_line(Edge2d edge){
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Implementation of Edge2d_List class
 
+//function for adding an Edge to Edgelist
+void Edge2d_List::addEdge(Edge2d e){
+	E.push_back(e);
+}
 
+//function to check presence of an Edge in a Edgelist
+bool Edge2d_List::check_equalEdge(Edge2d e){
+	bool result=false;
+	for(int i=0;i<E.size();i++){
+		if(equal_2dedge(E[i], e)){
+			result=true;
+		}
+	}
+	return result;
+}
 
+//function to check presence of a parallel Edge in a Edgelist
+bool Edge2d_List::check_parallelEdge(Edge2d e){
+	bool result=false;
+	for(int i=0;i<E.size();i++){
+		if(parallel_2dEdge(E[i], e)){
+			result=true;
+		}
+	}
+	return result;
+}
 
+//function to delete an Edge from an Edgelist
+void Edge2d_List::removeEdge(Edge2d e){
+	if(check_equalEdge(e)){
+		for(int i=0;i<E.size();i++){
+			if(equal_2dEdge(E[i], e)){
+				E.erase(E.begin()+i);
+			}
+		}
+	}
+}
 
-return ((normal.i*vertex.x)+(normal.j*vertex.y)+(normal.k*vertex.z));
+//////////////////////////////////////////////////////////////
+//Other functions
+//function to check if two 2d_edges are equal
+bool equal_2dEdge(Edge2d e1,Edge2d e2){
+	return ((equal_2dVertex(e1.v1,e2.v1)&&equal_2dVertex(e1.v2,e2.v2))||(equal_2dVertex(e1.v2,e2.v1)&&equal_2dVertex(e1.v1,e2.v2)));
+}
+
+//function to check if two edges are parallel
+bool parallel_2dEdge(Edge2d e1,Edge2d e2){
+	return (parallel_2dline(Line2d::Line2d(e1),Line2d::Line2d(e2)));
+}
+
+//function to check if two lines are equal
+bool equal_2dline(Line2d line1,Line2d line2){
+	bool temp = (product_of_normal_vertex_in2d(line1.direction,line1.point)-product_of_normal_vertex_in2d(line1.direction,line1.point)==DELTA);
+	return (parallel_2dline(line1,line2)&&temp);
+}
+
+//function to check if two lines are parallel
+bool parallel_2dline(Line2d line1,Line2d line2){
+	return ((line1.direction,line2.direction));
+}
+
+//function to check if two directions are equal
+bool equal_direction(Normal2d normal1,Normal2d normal2){
+	return ((normal1.i/normal2.i)==(normal1.j/normal2.j));
+}
+
+//gives intersection of 2d lines
+Vertex2d intersection_of_2dlines(Line2d line1,Line2d line2){
+	
+}
+
+//function to take union of two parallel edges
+Edge2d union_of_two_edges(Edge2d edge2d1,Edge2d edge2d2){
+
+}
+
+//ax + by  for a normal and vertex
+int product_of_normal_vertex_in2d(Normal2d normal,Vertex2d vertex){
+	return ((normal.i*vertex.x)+(normal.j*vertex.y));
+}
