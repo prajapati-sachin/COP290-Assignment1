@@ -29,7 +29,7 @@ public:
 	make_visible();
 
 	//function to check if point lies inside the edge
-	bool check_inside(Vertex2d 2dvertex)
+	bool check_inside(Vertex2d vertex)
 
 
 };
