@@ -23,13 +23,13 @@ public:
 	Edge2d(Vertex2d vertex1,Vertex2d vertex2);
 
 	//function to make edge hidden
-	make_hidden();
+	void make_hidden();
 
 	//function to make edge visible
-	make_visible();
+	void make_visible();
 
 	//function to check if point lies inside the edge
-	bool check_inside(Vertex2d 2dvertex)
+	bool check_inside(Vertex2d vertex);
 
 
 };
@@ -106,7 +106,7 @@ bool equal_2dline(Line2d line1,Line2d line2);
 bool parallel_2dline(Line2d line1,Line2d line2);
 
 //function to check if two directions/normal2d are equal
-bool equal_direction(Normal2d normal1,Normal2d normal2)
+bool equal_direction(Normal2d normal1,Normal2d normal2);
 
 //gives intersection of 2d lines
 Vertex2d intersection_of_2dlines(Line2d line1,Line2d line2);
@@ -117,4 +117,7 @@ Edge2d union_of_two_edges(Edge2d edge2d1,Edge2d edge2d2);
 //ax + by  for a normal and vertex
 int product_of_normal_vertex_in2d(Normal2d normal,Vertex2d vertex);
 
+int min(int a,int b);
+
+int max(int a,int b);
 #endif

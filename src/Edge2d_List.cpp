@@ -6,7 +6,7 @@ using namespace std;
 //Implementation of Edge2d class
 
 //constructor for ed Edge
-Edge2d::Edge2d(Vertex2d vertex1, Vertex2d vertex2){
+Edge2d::Edge2d(Vertex2d vertex1,Vertex2d vertex2){
 	v1 = vertex1;
 	v2 = vertex2;
 	hidden = false;
@@ -14,24 +14,24 @@ Edge2d::Edge2d(Vertex2d vertex1, Vertex2d vertex2){
 }
 
 //function to make edge hidden
-Edge2d::make_hidden(){
+void Edge2d::make_hidden(){
 	hidden = true;
 }
 
 //function to make edge visible
-Edge2d::make_visible(){
+void Edge2d::make_visible(){
 	hidden = false;
 }
 
 //function to check if point lies inside the edge
-bool Edge2d::check_inside(Vertex2d 2dvertex){
+bool Edge2d::check_inside(Vertex2d vertex){
 	int x_min = min(v1.x,v2.x);
 	int x_max = max(v1.x,v2.x);
 	int y_min = min(v1.y,v2.y);
 	int y_max = max(v1.y,v2.y);
 
-	bool x_bound = (x_min<=2dvertex.x)&&(2dvertex.x<=x_max);;
-	bool y_bound = (y_min<=2dvertex.y)&&(2dvertex.y<=y_max);;
+	bool x_bound = (x_min<=vertex.x)&&(vertex.x<=x_max);;
+	bool y_bound = (y_min<=vertex.y)&&(vertex.y<=y_max);;
 	return (x_bound&&y_bound);
 }
 
@@ -157,7 +157,7 @@ Vertex2d intersection_of_2dlines(Line2d line1,Line2d line2){
 	return Vertex2d::Vertex2d(x,y);
 }
 
-//function to take union of two parallel edges
+//function to take union of two parallel edges//need a bool to check first
 Edge2d union_of_two_edges(Edge2d edge2d1,Edge2d edge2d2){
 	Edge2d temp;
 	if(edge2d1.Edge2d::check_inside(edge2d2.v1)&&edge2d1.Edge2d::check_inside(edge2d2.v2))
@@ -185,4 +185,18 @@ Edge2d union_of_two_edges(Edge2d edge2d1,Edge2d edge2d2){
 //ax + by  for a normal and vertex
 int product_of_normal_vertex_in2d(Normal2d normal,Vertex2d vertex){
 	return ((normal.i*vertex.x)+(normal.j*vertex.y));
+}
+
+int min(int a,int b){
+	if (a<b)
+		return a;
+	else
+		return b;
+}
+
+int max(int a,int b){
+	if (a>b)
+		return a;
+	else
+		return b;
 }
