@@ -55,14 +55,15 @@ public:
 	//function to check presence of a vertex in a vertexlist
 	bool checkVertex(Vertex3d v);
 	
-	//function which gives the corresponding list of 2d vertices in top view 
-	Vertex2d_List list_top_view();
-
+	
 	//function which gives the corresponding list of 2d vertices in front view 
-	Vertex2d_List list_front_view();
+	Vertex2d_List list_frontview();
+
+	//function which gives the corresponding list of 2d vertices in top view 
+	Vertex2d_List list_topview();
 
 	//function which gives the corresponding list of 2d vertices in side view 
-	Vertex2d_List list_side_view();
+	Vertex2d_List list_sideview();
 
 
 };

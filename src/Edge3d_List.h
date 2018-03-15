@@ -19,13 +19,13 @@ class Edge3d{
 	Edge3d(Vertex3d v1,Vertex3d v2);
 
 	// projection of edge in frontview
-	Edge2d Edge2d_frontview();
+	Edge2d edge2d_front();
 
 	// projection of edge in topview
-	Edge2d Edge2d_topview();
+	Edge2d edge2d_top();
 
 	// projection of edge in sideview
-	Edge2d Edge2d_sideview();
+	Edge2d edge2d_side();
 
 };
 
@@ -43,33 +43,37 @@ class Edge3d_List{
 	Edge3d_List(Vertex3d vertex,Edge2d_List edgelist) ;
 
 	//function for adding an edge to edgelist
-	void addEdge(Edge3d edge_to_add);
+	void addEdge(Edge3d e);
 
 	//function to delete an edge from an edgelist
-	void removeEdge(Edge3d edge_to_remove);
+	void removeEdge(Edge3d e);
 
 	//function to check presence of an edge in an edgelist
 	bool checkEdge(Edge3d edge_to_check);
 
 	//function to create edge list drom given edgekist in 3d and 2d vertex list in front view
-	Edge2d_List Edgelist_frontview(Vertex2d_List vertexlist);
+	Edge2d_List list_frontview(Vertex2d_List vertexlist);
 
 	//function to create edge list drom given edgekist in 3d and 2d vertex list in top view
-	Edge2d_List Edgelist_topview(Vertex2d_List vertexlist);
+	Edge2d_List list_topview(Vertex2d_List vertexlist);
 
 	//function to create edge list drom given edgekist in 3d and 2d vertex list in side view
-	Edge2d_List Edgelist_sideview(Vertex2d_List vertexlist);
+	Edge2d_List list_sideview(Vertex2d_List vertexlist);
 
 
 };
 
-//function to check if two 3d_edges are equal
-bool equal_3dedge(Edge3d edge3d1,Edge3d edge3d2);
+namespace extra_functions_3dedge{
+	//function to check if two 3d_edges are equal
+	bool equal_3dedge(Edge3d edge3d1,Edge3d edge3d2);
 
-//function to check if there is a common vertex between two edges
-bool check_common_vertex(Edge3d edge1,Edge3d edge2);
+	//function to check if there is a common vertex between two edges
+	bool check_common_vertex(Edge3d edge1,Edge3d edge2);
 
-//function to find common vertex between two edges
-Vertex3d common_vertex(Edge3d edge3d1,Edge3d edge3d2);
+	//function to find common vertex between two edges
+	Vertex3d common_vertex(Edge3d edge3d1,Edge3d edge3d2);
 
+	//function which given a 3d edge vector and a edge gives the index at which edge is present
+	int edge_index(vector<Edge3d> elist, Edge3d e);
+}
 #endif
