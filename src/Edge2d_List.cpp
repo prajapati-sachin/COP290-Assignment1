@@ -125,7 +125,7 @@ bool equal_2dEdge(Edge2d e1,Edge2d e2){
 
 //function to check if two edges are parallel
 bool parallel_2dEdge(Edge2d e1,Edge2d e2){
-	return (parallel_2dline(Line2d::Line2d(e1),Line2d::Line2d(e2)));
+	return (parallel_2dline(Line2d(e1),Line2d(e2)));
 }
 
 //function to check if two lines are equal
@@ -136,7 +136,7 @@ bool equal_2dline(Line2d line1,Line2d line2){
 
 //function to check if two lines are parallel
 bool parallel_2dline(Line2d line1,Line2d line2){
-	return ((line1.direction,line2.direction));
+	return (equal_direction(line1.direction,line2.direction));
 }
 
 //function to check if two directions are equal
@@ -146,15 +146,15 @@ bool equal_direction(Normal2d normal1,Normal2d normal2){
 
 //gives intersection of 2d lines
 Vertex2d intersection_of_2dlines(Line2d line1,Line2d line2){
-	int a1 = line1.direction,i;
-	int b1 = line1.direction,j;
+	int a1 = line1.direction.i;
+	int b1 = line1.direction.j;
 	int c1 = product_of_normal_vertex_in2d(line1.direction,line1.point);
-	int a2 = line2.direction,i;
-	int b2 = line2.direction,j;
+	int a2 = line2.direction.i;
+	int b2 = line2.direction.j;
 	int c2 = product_of_normal_vertex_in2d(line2.direction,line2.point);
 	int x = (c1*b2-c2*b1)/(a1*b2-a2*b1);
 	int y = (c1*a2-c2*a1)/(b1*a2-b2*a1);
-	return Vertex2d::Vertex2d(x,y);
+	return Vertex2d(x,y);
 }
 
 //function to take union of two parallel edges//need a bool to check first
