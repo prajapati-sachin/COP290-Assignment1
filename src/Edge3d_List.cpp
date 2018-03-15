@@ -10,7 +10,7 @@ namespace extra_functions_3dedge{
 
 
 	bool equal_3dedge(Edge3d e1, Edge3d e2){
-		if(equal_3dvertex(e1.x, e2.x) && equal_3dvertex(e1.y, e2.y) || equal_3dvertex(e1.x, e2.y) && equal_3dvertex(e1.y, e2.x))
+		if((extra_functions_3dvertex::equal_3dvertex(e1.x, e2.x) && extra_functions_3dvertex::equal_3dvertex(e1.y, e2.y))|| (extra_functions_3dvertex::equal_3dvertex(e1.x, e2.y) && extra_functions_3dvertex::equal_3dvertex(e1.y, e2.x)))
 			return true;
 		else
 			return false;
@@ -34,7 +34,7 @@ Edge3d::Edge3d(Vertex3d v1, Vertex3d v2){
 	y=v2;
 }
 
-Edge2d Edge3d::Edge2d_frontview(){
+Edge2d Edge3d::edge2d_front(){
 	Vertex2d first;
 	Vertex2d second;
 	first = x.point2d_front();
@@ -43,7 +43,7 @@ Edge2d Edge3d::Edge2d_frontview(){
 	return result;
 }
 
-Edge2d Edge3d::Edge2d_topview(){
+Edge2d Edge3d::edge2d_top(){
 	Vertex2d first;
 	Vertex2d second;
 	first = x.point2d_top();
@@ -52,7 +52,7 @@ Edge2d Edge3d::Edge2d_topview(){
 	return result;
 }
 
-Edge2d Edge3d::Edge2d_sideview(){
+Edge2d Edge3d::edge2d_side(){
 	Vertex2d first;
 	Vertex2d second;
 	first = x.point2d_side();
@@ -66,7 +66,7 @@ void Edge3d_List::addEdge(Edge3d e){
 	E.push_back(e);
 }
 
-void Edge3d_List::removeVertex(Edge3d e){
+void Edge3d_List::removeEdge(Edge3d e){
 	if(checkEdge(e)){
 		int i = extra_functions_3dedge::edge_index(E,e);
 		E.erase(E.begin()+i);
@@ -85,11 +85,30 @@ bool Edge3d_List::checkEdge(Edge3d e){
 
 
 Edge2d_List Edge3d_List::list_frontview(){
-	Vertex2d_List front_projections;
+	Edge2d_List front_projections;
 	for(int i=0;i<E.size();i++){
-		Vertex3d temp = E[i];
-		Vertex2d projection = temp.point2d_front();
-		(front_projections.V).push_back(projection);
+		Edge3d temp = E[i];
+		Edge2d projection = temp.edge2d_front();
+		(front_projections.E).push_back(projection);
 	}
 }
 
+
+Edge2d_List Edge3d_List::list_topview(){
+	Edge2d_List top_projections;
+	for(int i=0;i<E.size();i++){
+		Edge3d temp = E[i];
+		Edge2d projection = temp.edge2d_top();
+		(top_projections.E).push_back(projection);
+	}
+}
+
+
+Edge2d_List Edge3d_List::list_sideview(){
+	Edge2d_List side_projections;
+	for(int i=0;i<E.size();i++){
+		Edge3d temp = E[i];
+		Edge2d projection = temp.edge2d_side();
+		(side_projections.E).push_back(projection);
+	}
+}
