@@ -132,16 +132,7 @@ bool Vertex3d_List::checkVertex(Vertex3d v){
 	return result;
 }
 
-Vertex2d_List Vertex3d_List::list_top_view(){
-	Vertex2d_List top_projections;
-	for(int i=0;i<E.size();i++){
-		Vertex3d temp = E[i];
-		Vertex2d projection = temp.point2d_top();
-		(top_projections.V).push_back(projection);
-	}
-}
-
-Vertex2d_List Vertex3d_List::list_front_view(){
+Vertex2d_List Vertex3d_List::list_frontview(){
 	Vertex2d_List front_projections;
 	for(int i=0;i<E.size();i++){
 		Vertex3d temp = E[i];
@@ -150,7 +141,18 @@ Vertex2d_List Vertex3d_List::list_front_view(){
 	}
 }
 
-Vertex2d_List Vertex3d_List::list_side_view(){
+Vertex2d_List Vertex3d_List::list_topview(){
+	Vertex2d_List top_projections;
+	for(int i=0;i<E.size();i++){
+		Vertex3d temp = E[i];
+		Vertex2d projection = temp.point2d_top();
+		(top_projections.V).push_back(projection);
+	}
+}
+
+
+
+Vertex2d_List Vertex3d_List::list_sideview(){
 	Vertex2d_List side_projections;
 	for(int i=0;i<E.size();i++){
 		Vertex3d temp = E[i];
