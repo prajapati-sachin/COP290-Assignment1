@@ -4,7 +4,6 @@
 #include <vector>
 #include "Edge2d_List.h"
 #include "Vertex3d_List.h"
-#include "Common_functions.h"
 
 using namespace std;
 
@@ -17,7 +16,7 @@ class Edge3d{
 	Vertex3d y;
 
 	//constructors
-	Edge3d(Vertex3d x,Vertex3d y);
+	Edge3d(Vertex3d v1,Vertex3d v2);
 
 	// projection of edge in frontview
 	Edge2d Edge2d_frontview();

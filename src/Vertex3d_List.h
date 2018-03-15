@@ -18,10 +18,13 @@ class Vertex3d{
 	int z;
 
 	//constructor
- 	Vertex3d (int x,int y,int z);
+ 	Vertex3d (int x1,int y1,int z1);
+
+ 	//empty construtor
+ 	Vertex3d ();
 
  	//constructor to create a vertex from 3 points in respective projections
- 	Vertex3d (Vertex2d front_vertex2d, Vertex2d top_vertex2d, Vertex2d side_vertex2d);
+ 	Vertex3d (Vertex2d front, Vertex2d top, Vertex2d side);
 
  	Vertex2d point2d_front();
 
@@ -37,8 +40,8 @@ class Vertex3d_List{
 public:
 	vector<Vertex3d> E;
 	//constructor not needed in this class
-	//constructors
-	//Vertex3d_List();
+	//empty constructors
+	Vertex3d_List();
 
 	// //constructor to generate vertex3d list from vertex 2d list
 	// Vertex3d_List(Vertex2d_List top_2dvertexlist, Vertex2d_List front_2dvertexlist, Vertex2d_List side_2dvertexlist);
