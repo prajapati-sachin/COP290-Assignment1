@@ -5,8 +5,9 @@ using namespace std;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Implementation of Edge2d class
 
-//constructor for ed Edge
+//constructor for 2d Edge
 Edge2d::Edge2d(Vertex2d vertex1,Vertex2d vertex2){
+
 	v1 = vertex1;
 	v2 = vertex2;
 	hidden = false;

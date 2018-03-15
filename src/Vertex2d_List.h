@@ -16,7 +16,10 @@ class Vertex2d{
 	int y;
 
 	//constructor
+ 	Vertex2d();
+
  	Vertex2d (int x,int y);
+
 
 
 };

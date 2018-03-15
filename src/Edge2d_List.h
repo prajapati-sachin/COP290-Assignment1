@@ -19,7 +19,9 @@ public:
 	//hidden or not
 	bool hidden;
 
-	//constructors
+	//constructorss
+	Edge2d();
+
 	Edge2d(Vertex2d vertex1,Vertex2d vertex2);
 
 	//function to make edge hidden
