@@ -16,16 +16,20 @@ using namespace std;
 **/
 
 class Projection2d{
+	public:
 	// list of vertices
 	Vertex2d_List V;
 	// list of edges
 	Edge2d_List E;
+	//empty constructor
+ 	Projection2d();
 	//constructor
  	Projection2d(Vertex2d_List vertices, Edge2d_List edges);
 };
 
 //Triplet 
 class Projection{
+	public:
 	//front-view
 	Projection2d front;
 	//top-view

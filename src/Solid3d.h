@@ -18,12 +18,15 @@ using namespace std;
 
 **/
 class Solid3d{
+	public:
 	// list of vertices
 	Vertex3d_List V;
 	// list of edges
 	Edge3d_List E;
 	// list of faces
 	Face3d_List F;
+	//empty constructor
+ 	Solid3d ();
 	//constructor
  	Solid3d (Vertex3d_List vertices, Edge3d_List edges, Face3d_List faces);
 	// gives the front projection of 3d solid

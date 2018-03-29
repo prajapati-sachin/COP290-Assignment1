@@ -11,7 +11,7 @@ Solid3d::Solid3d(Vertex3d_List vertices, Edge3d_List edges, Face3d_List faces){
 	F=faces;
 }
 
-Solid3d::make_front_projections(){
+Projection2d Solid3d::make_front_projections(){
 	Vertex2d_List vertices;
 	Edge2d_List edges;
 	vertices = V.list_frontview();
@@ -20,7 +20,7 @@ Solid3d::make_front_projections(){
 	return view;
 }
 
-Solid3d::make_top_projections(){
+Projection2d Solid3d::make_top_projections(){
 	Vertex2d_List vertices;
 	Edge2d_List edges;
 	vertices = V.list_topview();
@@ -29,7 +29,7 @@ Solid3d::make_top_projections(){
 	return view;
 }
 
-Solid3d::make_side_projections(){
+Projection2d Solid3d::make_side_projections(){
 	Vertex2d_List vertices;
 	Edge2d_List edges;
 	vertices = V.list_sideview();
@@ -38,7 +38,7 @@ Solid3d::make_side_projections(){
 	return view;
 }
 
-Solid3d::make_projections(){
+Projection Solid3d::make_projections(){
 	Projection2d front;
 	Projection2d top;
 	Projection2d side;

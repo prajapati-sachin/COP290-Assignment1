@@ -31,6 +31,7 @@ class Edge3d{
 
 /** EdgeList :- a list of edges **/
 class Edge3d_List{
+	public:
 	vector<Edge3d> E;
 
 	//constructors

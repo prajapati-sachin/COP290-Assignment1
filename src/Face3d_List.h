@@ -11,6 +11,7 @@ using namespace std;
 
 //a face in 2d solid is a vector of 2d edges in which first and last is same
 class face2d{
+	public:
 	//vector of a continous loop of 2D edges which contain a face.
 	vector<Edge2d> v;
 
@@ -19,6 +20,7 @@ class face2d{
 
 /** FaceList :- a list of 2dfaces **/
 class Face2d_List{
+	public:
 	vector<face2d> F;
 
 	//constructor to create a face list from a surface list, edge list and vertex list
@@ -38,6 +40,7 @@ class Face2d_List{
 
 //a face in 3d solid is a vector of edges in which first and last is same
 class face3d{
+	public:
 	//vector of a continous loop of 3D edges which contain a face.
 	vector<Edge3d> loop;
 
@@ -51,19 +54,20 @@ class face3d{
 	Surface3d correspondin_surface();
 
 	//the function returns a 2d projection of a face in front plane
-	Face2d front_projection();
+	face2d front_projection();
 
 	//the function returns a 2d projection of a face in top plane
-	Face2d top_projection();
+	face2d top_projection();
 
 	//the function returns a 2d projection of a face in side plane
-	Face2d side_projection();
+	face2d side_projection();
 
 };
 
 
 /** FaceList :- a list of faces **/
 class Face3d_List{
+	public:
 	vector<face3d> F;
 
 
