@@ -33,7 +33,7 @@ class Projection{
 	//side-view
 	Projection2d side;
 	//constructor
- 	Projection2d(Projection2d front,Projection2d top, Projection2d side);
+ 	Projection(Projection2d f,Projection2d t, Projection2d s);
 };
 
 #endif
