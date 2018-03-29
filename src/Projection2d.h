@@ -20,6 +20,8 @@ class Projection2d{
 	Vertex2d_List V;
 	// list of edges
 	Edge2d_List E;
+	//constructor
+ 	Projection2d(Vertex2d_List vertices, Edge2d_List edges);
 };
 
 //Triplet 
@@ -30,6 +32,8 @@ class Projection{
 	Projection2d top;
 	//side-view
 	Projection2d side;
+	//constructor
+ 	Projection2d(Projection2d front,Projection2d top, Projection2d side);
 };
 
 #endif
