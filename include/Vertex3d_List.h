@@ -76,7 +76,7 @@ namespace extra_functions_3dvertex{
 	//function which generates a 3d vertex from 3 2d coordinates
 	Vertex3d vertex3d_generate(Vertex2d front, Vertex2d top, Vertex2d side);
 	//function which extends the above function to list
-	Vertex3d_List vetex3dlist_generate(Vertex2d_List front_list, Vertex2d_List top_list, Vertex2d_List side_list);
+	vector<Vertex3d> vertex3dlist_generate(Vertex2d_List front_list, Vertex2d_List top_list, Vertex2d_List side_list);
 	//function which given a 3d vertex vector and a vertex gives the index at which vertex is present
 	int vertex_index(vector<Vertex3d> vlist, Vertex3d v);
 }

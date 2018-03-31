@@ -5,6 +5,8 @@ using namespace std;
 ///////////////////////////////////////////////////////////
 //Implementation of normal3d class
 
+Normal3d::Normal3d(){};
+
 //constructor to create normal from given two edges
 Normal3d::Normal3d (Edge3d edge3d){
 	i = ((edge3d.x).x) - ((edge3d.y).x);
@@ -47,6 +49,9 @@ Surface3d::Surface3d(Edge3d edge3d1,Edge3d edge3d2,Vertex3d vertex){
 	surface_vertex = vertex;
 }
 
+Surface3d::Surface3d(){}
+
+
 bool Surface3d::check_vertex_on_surface(Vertex3d vertex){
 	return (product_of_normal_vertex_in3d(normal_vector,surface_vertex)==product_of_normal_vertex_in3d(normal_vector,vertex));
 }
@@ -58,6 +63,8 @@ bool Surface3d::check_edge3d_on_surface(Edge3d edge){
 
 /////////////////////////////////////////////////////////////
 //Implementation of Surface3d_List class
+Surface_List::Surface_List(){};
+
 void Surface_List::addSurface(Surface3d s){
 	S.push_back(s);
 }

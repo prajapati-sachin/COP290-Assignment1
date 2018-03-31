@@ -1,3 +1,4 @@
+
 #ifndef EDGE3D_LIST
 #define EDGE3D_LIST
 
@@ -14,8 +15,6 @@ class Edge3d{
 	Vertex3d x;
 	//second end point
 	Vertex3d y;
-
-	Edge3d();
 
 	//constructors
 	Edge3d(Vertex3d v1,Vertex3d v2);

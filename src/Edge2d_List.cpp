@@ -14,6 +14,8 @@ Edge2d::Edge2d(Vertex2d vertex1,Vertex2d vertex2){
 	
 }
 
+Edge2d::Edge2d(){}
+
 //function to make edge hidden
 void Edge2d::make_hidden(){
 	this->hidden = true;
@@ -49,6 +51,7 @@ Normal2d::Normal2d(Vertex2d vertex1, Vertex2d vertex2){
 	this->j=vertex1.y-vertex2.y;
 }
 
+Normal2d::Normal2d(){}
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Implementation of Line2d class
 
@@ -70,6 +73,7 @@ Line2d::Line2d(Edge2d edge){
 	this->point = edge.v1;
 }
 
+Line2d::Line2d(){}
 //function to check if point lies on the line
 bool Line2d::check_vertex2d_in_line(Vertex2d vertex){
 	return (product_of_normal_vertex_in2d(direction,vertex)==product_of_normal_vertex_in2d(direction,point));
@@ -83,10 +87,13 @@ bool Line2d::check_edge2d_in_line(Edge2d edge){
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Implementation of Edge2d_List class
 
+Edge2d_List::Edge2d_List(){}
+
 //function for adding an Edge to Edgelist
 void Edge2d_List::addEdge(Edge2d e){
 	this->E.push_back(e);
 }
+
 
 //function to check presence of an Edge in a Edgelist
 bool Edge2d_List::check_equalEdge(Edge2d e){

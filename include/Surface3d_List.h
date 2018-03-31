@@ -36,11 +36,8 @@ class Surface3d{
 	Normal3d normal_vector;
 	//coordinate in the surface
 	Vertex3d surface_vertex; 
+	//empty constructor
 
-<<<<<<< HEAD
-	//emty constructor
-=======
->>>>>>> 2afbbea57af0f1a23e94225bf337fd21bfc18ce6
 	Surface3d();
 
 	//constructor to create a surface from given pair of edges and vertex
@@ -58,7 +55,6 @@ class Surface_List{
 	public:
 	vector<Surface3d> S;
 
-	Surface3d_List();
 	//constructor for creating surface list for given edge_lists and vertex_list
 	Surface_List(Edge3d_List edge3dList1,Edge3d_List edge3dList2,Vertex3d_List vertexlist);
 

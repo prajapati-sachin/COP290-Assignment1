@@ -34,6 +34,7 @@ Edge3d::Edge3d(Vertex3d v1, Vertex3d v2){
 	y=v2;
 }
 
+Edge3d::Edge3d(){};
 
 Edge2d Edge3d::edge2d_front(){
 	Vertex2d first;
@@ -81,6 +82,8 @@ Edge3d_List::Edge3d_List(Edge2d_List front_2dEdgelist,Edge2d_List top_2dEdgelist
 		}
 	}
 }
+
+Edge3d_List::Edge3d_List(){}
 
 void Edge3d_List::addEdge(Edge3d e){
 	E.push_back(e);

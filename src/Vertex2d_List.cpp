@@ -12,6 +12,7 @@ Vertex2d::Vertex2d(int x, int y){
 	this->y=y;
 }
 
+Vertex2d::Vertex2d(){};
 // Vertex2d::Vertex2d(){
 	
 // 	this->x=0;
@@ -20,6 +21,7 @@ Vertex2d::Vertex2d(int x, int y){
 
 /////////////////////////////////////////////////////////////
 //Implementation of Vertex2d_List class
+Vertex2d_List::Vertex2d_List(){};
 
 //function for adding an vertex to vertexlist
 void Vertex2d_List::addVertex(Vertex2d v){

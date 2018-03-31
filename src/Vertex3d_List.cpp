@@ -31,16 +31,16 @@ namespace extra_functions_3dvertex{
 	}
 
 
-	Vertex3d_List vetex3dlist_generate(Vertex2d_List front_list, Vertex2d_List top_list, Vertex2d_List side_list){
+	vector<Vertex3d> vertex3dlist_generate(Vertex2d_List front_list, Vertex2d_List top_list, Vertex2d_List side_list){
 		vector<Vertex2d> front = front_list.V;
 		vector<Vertex2d> top = top_list.V;
 		vector<Vertex2d> side = side_list.V;
-		Vertex3d_List accumulator_list;
+		vector<Vertex3d> accumulator_list;
 		for(int i=0;i<front.size();i++){
 			for(int j=0;j<top.size();j++){
 				for(int k=0;k<side.size();k++){
 					 if(extra_functions_3dvertex::vertex3d_possible(front[i],top[j],side[k])){
-						accumulator_list.addVertex(extra_functions_3dvertex::vertex3d_generate(front[i],top[j],side[k]));
+						accumulator_list.push_back(extra_functions_3dvertex::vertex3d_generate(front[i],top[j],side[k]));
 					}
 				}
 			}
@@ -61,6 +61,10 @@ namespace extra_functions_3dvertex{
 }
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Implementation of Vertex3d class
+
+Vertex3d::Vertex3d(){}
+
+
 Vertex3d::Vertex3d(int x1, int y1, int z1){
 	//constructor for 3d Vertex
 	x=x1;
@@ -111,6 +115,13 @@ Vertex2d Vertex3d::point2d_side(){
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Implementation of class Vertex3d_List.h
+Vertex3d_List::Vertex3d_List(){};
+
+Vertex3d_List::Vertex3d_List(Vertex2d_List top_2dvertexlist, Vertex2d_List front_2dvertexlist, Vertex2d_List side_2dvertexlist){
+	V= extra_functions_3dvertex::vertex3dlist_generate(top_2dvertexlist, front_2dvertexlist, side_2dvertexlist);
+}
+
+
 void Vertex3d_List::addVertex(Vertex3d v){
 	V.push_back(v);
 }
