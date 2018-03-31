@@ -30,7 +30,7 @@ void Vertex2d_List::addVertex(Vertex2d v){
 bool Vertex2d_List::checkVertex(Vertex2d v){
 	bool result=false;
 	for(int i=0;i<V.size();i++){
-		if(equal_2dvertex(V[i], v)){
+		if(equal_2dVertex(V[i], v)){
 			result=true;
 		}
 	}
@@ -41,7 +41,7 @@ bool Vertex2d_List::checkVertex(Vertex2d v){
 void Vertex2d_List::removeVertex(Vertex2d v){
 	if(checkVertex(v)){
 		for(int i=0;i<V.size();i++){
-			if(equal_2dvertex(V[i], v)){
+			if(equal_2dVertex(V[i], v)){
 				V.erase(V.begin()+i);
 			}
 		}
