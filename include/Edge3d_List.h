@@ -15,6 +15,8 @@ class Edge3d{
 	//second end point
 	Vertex3d y;
 
+	Edge3d();
+
 	//constructors
 	Edge3d(Vertex3d v1,Vertex3d v2);
 

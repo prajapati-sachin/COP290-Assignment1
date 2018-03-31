@@ -30,8 +30,14 @@ class Projection2d{
 //Triplet 
 class Projection{
 	public:
+<<<<<<< HEAD
 	//empty constructor
 	Projection();
+=======
+	
+	Projection();
+
+>>>>>>> 2afbbea57af0f1a23e94225bf337fd21bfc18ce6
 	//front-view
 	Projection2d front;
 	//top-view
