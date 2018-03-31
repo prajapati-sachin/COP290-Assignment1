@@ -69,8 +69,6 @@ class face3d{
 class Face3d_List{
 	public:
 	vector<face3d> F;
-
-
 	//constructor to create a face list from a surface list, edge list and vertex list
 	Face3d_List();
 	
@@ -85,5 +83,6 @@ class Face3d_List{
 	//function to check a face in a facelist
 	bool checkFace(face3d face_to_chexk);
 };
+
 
 #endif

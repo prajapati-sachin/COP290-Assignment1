@@ -15,5 +15,7 @@ int main(){
 	int b=3;
 	int c;
 	c=a+b;
+	cout << c <<"\n";
+//	cout << "Hello World!\n";
 	return 0;
 }
