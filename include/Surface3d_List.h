@@ -37,6 +37,8 @@ class Surface3d{
 	//coordinate in the surface
 	Vertex3d surface_vertex; 
 
+	Surface3d();
+
 	//constructor to create a surface from given pair of edges and vertex
 	Surface3d(Edge3d edge3d1,Edge3d edge3d2,Vertex3d vertex);
 
@@ -52,6 +54,7 @@ class Surface_List{
 	public:
 	vector<Surface3d> S;
 
+	Surface3d_List();
 	//constructor for creating surface list for given edge_lists and vertex_list
 	Surface_List(Edge3d_List edge3dList1,Edge3d_List edge3dList2,Vertex3d_List vertexlist);
 

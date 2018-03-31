@@ -30,6 +30,9 @@ class Projection2d{
 //Triplet 
 class Projection{
 	public:
+	
+	Projection();
+
 	//front-view
 	Projection2d front;
 	//top-view
