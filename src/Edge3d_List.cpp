@@ -34,6 +34,7 @@ Edge3d::Edge3d(Vertex3d v1, Vertex3d v2){
 	y=v2;
 }
 
+
 Edge2d Edge3d::edge2d_front(){
 	Vertex2d first;
 	Vertex2d second;
@@ -62,6 +63,25 @@ Edge2d Edge3d::edge2d_side(){
 }
 ////////////////////////////////////////////////////////////////////////////////////
 //Implementaion of class Edge3d_List
+
+//constructor to create 3d edge list given the 3 edge lists in three progections and 3d vertex list
+Edge3d_List::Edge3d_List(Edge2d_List front_2dEdgelist,Edge2d_List top_2dEdgelist,Edge2d_List side_2dEdgelist, Vertex3d_List Vertexlist_3d){
+	for(int i=0;i<Vertexlist_3d.size();i++){
+		for(int j=0;j<Vertexlist_3d.size();j++){
+			if(!equal_3dvertex(Vertexlist_3d.get(i),Vertexlist_3d.get(j))){
+				Edge3d edge = Edge3d::Edge3d(Vertexlist_3d.get(i),Vertexlist_3d.get(j))
+				Edge2d front_edge = edge.edge2d_front();
+				Edge2d top_edge = edge.edge2d_top();
+				Edge2d side_edge = edge.edge2d_side();
+				if(front_2dEdgelist.check_equalEdge(front_edge)&&top_2dEdgelist.check_equalEdge(top_edge)&&side_2dEdgelist.check_equalEdge(side_edge)){
+					this->E.push_back(edge);
+				}
+
+			}
+		}
+	}
+}
+
 void Edge3d_List::addEdge(Edge3d e){
 	E.push_back(e);
 }

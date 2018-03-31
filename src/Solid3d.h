@@ -29,6 +29,8 @@ class Solid3d{
  	Solid3d ();
 	//constructor
  	Solid3d (Vertex3d_List vertices, Edge3d_List edges, Face3d_List faces);
+	//constructor to construct solid 3d from 3 projections
+	Solid3d (Projection2d projections);
 	// gives the front projection of 3d solid
 	Projection2d make_front_projections();
 	// gives the top projection of 3d solid

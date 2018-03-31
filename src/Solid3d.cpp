@@ -11,6 +11,17 @@ Solid3d::Solid3d(Vertex3d_List vertices, Edge3d_List edges, Face3d_List faces){
 	F=faces;
 }
 
+	//constructor to construct solid 3d from 3 projections
+Solid3d::Solid3d (Projection2d projections){
+	Projection2d frontview = projections.front;
+	Projection2d topview = projections.top;
+	Projection2d sideview = projections.side;
+
+	Vertex3d_List V = Vertex3d_List::Vertex3d_List(frontview.V,topview.V,sideview.V)
+	Edge3d_List E = Edge3d_List::Edge3d_List(frontview.E,topview.E,sideview.E,V);
+	
+}
+
 Projection2d Solid3d::make_front_projections(){
 	Vertex2d_List vertices;
 	Edge2d_List edges;

@@ -91,6 +91,9 @@ void Edge2d_List::addEdge(Edge2d e){
 //function to check presence of an Edge in a Edgelist
 bool Edge2d_List::check_equalEdge(Edge2d e){
 	bool result=false;
+	if(equal_2dVertex(e.v1,e.v2)){
+		result = true;
+	}
 	for(int i=0;i<this->E.size();i++){
 		if(equal_2dEdge(this->E[i], e)){
 			result=true;

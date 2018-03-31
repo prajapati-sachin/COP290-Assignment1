@@ -38,7 +38,7 @@ class Edge3d_List{
 	Edge3d_List();
 
 	//constructor to create 3d edge list given the 3 edge lists in three progections and 3d vertex list
-	Edge3d_List(Edge2d_List top_2dEdgelist,Edge2d_List front_2dEdgelist,Edge2d_List side_2dEdgelist, Vertex3d_List Vertexlist_3d);
+	Edge3d_List(Edge2d_List front_2dEdgelist,Edge2d_List top_2dEdgelist,Edge2d_List side_2dEdgelist, Vertex3d_List Vertexlist_3d);
 	
 	//constructor that return edge list connected to the vertex in the given edgelist
 	Edge3d_List(Vertex3d vertex,Edge2d_List edgelist) ;
