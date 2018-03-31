@@ -14,7 +14,7 @@ class face2d{
 	public:
 	//vector of a continous loop of 2D edges which contain a face.
 	vector<Edge2d> v;
-
+	//empty constructor
 	face2d();
 };
 

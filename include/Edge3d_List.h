@@ -18,6 +18,9 @@ class Edge3d{
 	//constructors
 	Edge3d(Vertex3d v1,Vertex3d v2);
 
+	//empty constructor
+	Edge3d();
+
 	// projection of edge in frontview
 	Edge2d edge2d_front();
 

@@ -30,7 +30,7 @@ class Vertex2d_List{
 	vector<Vertex2d> V;
 
 	// //construction to create vertex2d_list
-	// Vertex2d_List();
+	Vertex2d_List();
 
 	//function for adding an vertex to vertexlist
 	void addVertex (Vertex2d v);
