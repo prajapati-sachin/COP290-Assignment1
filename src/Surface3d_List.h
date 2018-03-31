@@ -16,6 +16,9 @@ class Normal3d{
 	//k direction
 	int k;
 
+	//emty constructor
+	Normal3d();
+
 	//constructor to create normal from given edges
 	Normal3d (Edge3d edge3d);
 

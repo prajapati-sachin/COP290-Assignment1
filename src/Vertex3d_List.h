@@ -38,7 +38,7 @@ class Vertex3d{
 
 class Vertex3d_List{
 public:
-	vector<Vertex3d> E;
+	vector<Vertex3d> V;
 	//constructor not needed in this class
 	//empty constructors
 	Vertex3d_List();
