@@ -1,4 +1,4 @@
-#include "Solid3d.h"
+#include "../include/Solid3d.h"
 
 using namespace std;
 

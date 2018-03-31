@@ -1,4 +1,4 @@
-#include "HiddenLines.h"
+#include "../include/HiddenLines.h"
 
 namespace Hidden_line_functions{
 
