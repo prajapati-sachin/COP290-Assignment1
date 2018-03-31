@@ -10,3 +10,8 @@ void mark_hidden(Edge2d_List & 2dEdgelist ,Edge3d_List 3dEdgelist,Face3d_List 3d
 			list[i].Edge2d::make_hidden();
 	}
 }
+
+//check if a given 2dedge will be hidden or not
+bool check_hidden(Edge2d 2dEdge ,Edge3d_List 3dEdgelist, Face3d_List 3dFacelist){
+	
+}

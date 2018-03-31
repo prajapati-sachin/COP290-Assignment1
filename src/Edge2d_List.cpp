@@ -8,28 +8,32 @@ using namespace std;
 //constructor for 2d Edge
 Edge2d::Edge2d(Vertex2d vertex1,Vertex2d vertex2){
 
-	v1 = vertex1;
-	v2 = vertex2;
-	hidden = false;
+	this->v1 = vertex1;
+	this->v2 = vertex2;
+	this->hidden = false;
 	
 }
 
 //function to make edge hidden
 void Edge2d::make_hidden(){
-	hidden = true;
+	this->hidden = true;
 }
 
 //function to make edge visible
 void Edge2d::make_visible(){
-	hidden = false;
+	this->hidden = false;
 }
 
 //function to check if point lies inside the edge
 bool Edge2d::check_inside(Vertex2d vertex){
-	int x_min = min(v1.x,v2.x);
-	int x_max = max(v1.x,v2.x);
-	int y_min = min(v1.y,v2.y);
-	int y_max = max(v1.y,v2.y);
+	int x1=this->v1.x;
+	int x2=this->v2.x;
+	int y1=this->v1.y;
+	int y2=this->v2.y;
+	int x_min = min(x1,x2);
+	int x_max = max(x1,x2);
+	int y_min = min(y1,y2);
+	int y_max = max(y1,y2);
 
 	bool x_bound = (x_min<=vertex.x)&&(vertex.x<=x_max);;
 	bool y_bound = (y_min<=vertex.y)&&(vertex.y<=y_max);;
@@ -41,8 +45,8 @@ bool Edge2d::check_inside(Vertex2d vertex){
 //construction to construct a normal
 
 Normal2d::Normal2d(Vertex2d vertex1, Vertex2d vertex2){
-	i=vertex1.x-vertex2.x;
-	j=vertex1.y-vertex2.y;
+	this->i=vertex1.x-vertex2.x;
+	this->j=vertex1.y-vertex2.y;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -50,20 +54,20 @@ Normal2d::Normal2d(Vertex2d vertex1, Vertex2d vertex2){
 
 //construction for creating 2dline from two vertices
 Line2d::Line2d(Vertex2d vertex1,Vertex2d vertex2){
-	direction = Normal2d::Normal2d(vertex1,vertex2);
-	point = vertex1;
+	this->direction = Normal2d(vertex1,vertex2);
+	this->point = vertex1;
 }
 
 //construction for creating 2dline from normal and a vertex
 Line2d::Line2d(Normal2d normal,Vertex2d vertex){
-	direction = normal;
-	point = vertex;
+	this->direction = normal;
+	this->point = vertex;
 }
 
 //construction for creating 2dline from an edge
 Line2d::Line2d(Edge2d edge){
-	direction = Normal2d::Normal2d(edge.v1,edge.v2);
-	point = edge.v1;
+	this->direction = Normal2d(edge.v1,edge.v2);
+	this->point = edge.v1;
 }
 
 //function to check if point lies on the line
@@ -81,14 +85,14 @@ bool Line2d::check_edge2d_in_line(Edge2d edge){
 
 //function for adding an Edge to Edgelist
 void Edge2d_List::addEdge(Edge2d e){
-	E.push_back(e);
+	this->E.push_back(e);
 }
 
 //function to check presence of an Edge in a Edgelist
 bool Edge2d_List::check_equalEdge(Edge2d e){
 	bool result=false;
-	for(int i=0;i<E.size();i++){
-		if(equal_2dedge(E[i], e)){
+	for(int i=0;i<this->E.size();i++){
+		if(equal_2dEdge(this->E[i], e)){
 			result=true;
 		}
 	}
@@ -98,8 +102,8 @@ bool Edge2d_List::check_equalEdge(Edge2d e){
 //function to check presence of a parallel Edge in a Edgelist
 bool Edge2d_List::check_parallelEdge(Edge2d e){
 	bool result=false;
-	for(int i=0;i<E.size();i++){
-		if(parallel_2dEdge(E[i], e)){
+	for(int i=0;i<this->E.size();i++){
+		if(parallel_2dEdge(this->E[i], e)){
 			result=true;
 		}
 	}
@@ -109,9 +113,9 @@ bool Edge2d_List::check_parallelEdge(Edge2d e){
 //function to delete an Edge from an Edgelist
 void Edge2d_List::removeEdge(Edge2d e){
 	if(check_equalEdge(e)){
-		for(int i=0;i<E.size();i++){
-			if(equal_2dEdge(E[i], e)){
-				E.erase(E.begin()+i);
+		for(int i=0;i<this->E.size();i++){
+			if(equal_2dEdge(this->E[i], e)){
+				this->E.erase(this->E.begin()+i);
 			}
 		}
 	}

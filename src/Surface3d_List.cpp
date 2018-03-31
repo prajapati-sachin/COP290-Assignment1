@@ -107,7 +107,7 @@ int dot_product_of_normals(Normal3d normal,Normal3d normal2){
 }
 
 //ax + by +cz for a normal and vertex
-int product_of_normal_vertex(Normal3d normal,Vertex3d vertex){
+int product_of_normal_vertex_in3d(Normal3d normal,Vertex3d vertex){
 	return ((normal.i*vertex.x)+(normal.j*vertex.y)+(normal.k*vertex.z));
 }
 

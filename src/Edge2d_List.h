@@ -45,6 +45,8 @@ public:
 	int j;
 	
 	//construction to construct a normal
+	Normal2d();
+
 	Normal2d(Vertex2d vertex1, Vertex2d vertex2);
 
 };
@@ -55,6 +57,8 @@ public:
 	Normal2d direction;
 	//point on the line
 	Vertex2d point;
+
+	Line2d();
 
 	//construction for creating 2dline from two vertices
 	Line2d(Vertex2d vertex1,Vertex2d vertex2);

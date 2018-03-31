@@ -52,6 +52,6 @@ void Vertex2d_List::removeVertex(Vertex2d v){
 //other functions
 
 //function to check if two 2d_cordinates are equal
-bool equal_2dvertex(Vertex2d v1,Vertex2d v2){
+bool equal_2dVertex(Vertex2d v1,Vertex2d v2){
 	return (((v1.x-v2.x)==DELTA)&&((v1.y-v2.y)==DELTA));
 }
