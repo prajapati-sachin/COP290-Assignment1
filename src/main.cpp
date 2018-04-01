@@ -59,10 +59,8 @@ int main(int argc, char *argv[]){
 	V.addVertex(v7);
 	V.addVertex(v8);
 
-<<<<<<< HEAD
 //	V.print_Vertex3d_List();
-=======
->>>>>>> 1b11a22edf875510e07d708a70217808463e8949
+
 
 	Edge3d e1(v1,v2);
 	Edge3d e2(v1,v3);
@@ -92,34 +90,21 @@ int main(int argc, char *argv[]){
 	E.addEdge(e11);
 	E.addEdge(e12);
 	
-<<<<<<< HEAD
 //	E.print_Edge3d_List();
-=======
-	
->>>>>>> 1b11a22edf875510e07d708a70217808463e8949
 
 	Solid3d solid(V,E,F);
 
 	Projection2d front_projection = solid.make_front_projections();
 
 	Projection2d top_projection = solid.make_top_projections();
-<<<<<<< HEAD
-=======
 
 	Projection2d side_projection = solid.make_side_projections();
 
->>>>>>> 1b11a22edf875510e07d708a70217808463e8949
-
-	Projection2d side_projection = solid.make_side_projections();
-
-<<<<<<< HEAD
 	// (front_projection.V).print_Vertex2d_List();
 
 	// (front_projection.E).print_Edge2d_List();	
 	
 	// (top_projection.V).print_Vertex2d_List();
-=======
-	Projection projections(front_projection,top_projection,side_projection);
 	
 	// front_projection.V.print_Vertex2d_List();
 
@@ -133,21 +118,28 @@ int main(int argc, char *argv[]){
 
 	// side_projection.E.print_Edge2d_List();	
 
-	Solid3d solid1(projections);
+	// Solid3d solid1(projections);
 
-	solid1.V.print_Vertex3d_List();
+	// solid1.V.print_Vertex3d_List();
 
-	solid1.E.print_Edge3d_List();
->>>>>>> 1b11a22edf875510e07d708a70217808463e8949
+	// solid1.E.print_Edge3d_List();
 
 	// (top_projection.E).print_Edge2d_List();	
 	
 	// (side_projection.V).print_Vertex2d_List();
 
 	// (side_projection.E).print_Edge2d_List();	
-	p.setRenderHint(QPainter::Antialiasing);
+//	p.setRenderHint(QPainter::Antialiasing);
    	for(int i=0;i<((front_projection.V).V).size();i++){
    		 p.drawPoint((((front_projection.V).V[i]).x),(((front_projection.V).V[i]).y));
+   	}
+
+   	for(int i=0;i<((top_projection.V).V).size();i++){
+   		 p.drawPoint((((top_projection.V).V[i]).x),(((top_projection.V).V[i]).y));
+   	}
+
+   	for(int i=0;i<((side_projection.V).V).size();i++){
+   		 p.drawPoint((((side_projection.V).V[i]).x),(((side_projection.V).V[i]).y));
    	}
 
    	p.drawLine(0,0,5,0);
