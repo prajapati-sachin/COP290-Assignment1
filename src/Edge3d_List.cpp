@@ -80,7 +80,7 @@ Edge3d_List::Edge3d_List(Edge2d_List front_2dEdgelist,Edge2d_List top_2dEdgelist
 	for(int i=0;i<Vertexlist_3d.V.size();i++){
 		for(int j=0;j<Vertexlist_3d.V.size();j++){
 			if(!extra_functions_3dvertex::equal_3dvertex(Vertexlist_3d.V[i],Vertexlist_3d.V[j])){
-				Edge3d edge = Edge3d(Vertexlist_3d.V[i],Vertexlist_3d.V[i]);
+				Edge3d edge = Edge3d(Vertexlist_3d.V[i],Vertexlist_3d.V[j]);
 				Edge2d front_edge = edge.edge2d_front();
 				Edge2d top_edge = edge.edge2d_top();
 				Edge2d side_edge = edge.edge2d_side();

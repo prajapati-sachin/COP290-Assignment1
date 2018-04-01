@@ -95,17 +95,17 @@ int main(){
 
 	Projection projections(front_projection,top_projection,side_projection);
 	
-	front_projection.V.print_Vertex2d_List();
+	// front_projection.V.print_Vertex2d_List();
 
-	front_projection.E.print_Edge2d_List();	
+	// front_projection.E.print_Edge2d_List();	
 
-	top_projection.V.print_Vertex2d_List();
+	// top_projection.V.print_Vertex2d_List();
 
-	top_projection.E.print_Edge2d_List();	
+	// top_projection.E.print_Edge2d_List();	
 
-	side_projection.V.print_Vertex2d_List();
+	// side_projection.V.print_Vertex2d_List();
 
-	side_projection.E.print_Edge2d_List();	
+	// side_projection.E.print_Edge2d_List();	
 
 	Solid3d solid1(projections);
 
