@@ -51,7 +51,6 @@ int main(){
 	V.addVertex(v7);
 	V.addVertex(v8);
 
-	V.print_Vertex3d_List();
 
 	Edge3d e1(v1,v2);
 	Edge3d e2(v1,v3);
@@ -81,18 +80,38 @@ int main(){
 	E.addEdge(e11);
 	E.addEdge(e12);
 	
-	E.print_Edge3d_List();
+	
 
 	Solid3d solid(V,E,F);
 
 	Projection2d front_projection = solid.make_front_projections();
 
+	Projection2d top_projection = solid.make_top_projections();
+
+	Projection2d side_projection = solid.make_side_projections();
+
 
 	cout << "Hello World!\n";
 
+	Projection projections(front_projection,top_projection,side_projection);
+	
 	front_projection.V.print_Vertex2d_List();
 
 	front_projection.E.print_Edge2d_List();	
+
+	top_projection.V.print_Vertex2d_List();
+
+	top_projection.E.print_Edge2d_List();	
+
+	side_projection.V.print_Vertex2d_List();
+
+	side_projection.E.print_Edge2d_List();	
+
+	Solid3d solid1(projections);
+
+	solid1.V.print_Vertex3d_List();
+
+	solid1.E.print_Edge3d_List();
 
 	return 0;
 }
