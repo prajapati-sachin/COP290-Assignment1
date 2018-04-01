@@ -42,6 +42,15 @@ bool Edge2d::check_inside(Vertex2d vertex){
 	return (x_bound&&y_bound);
 }
 
+
+void Edge2d::print_Edge2d(){
+	cout<< "  [v1: ";
+	v1.print_Vertex2d();
+	cout<< "  v2: ";
+	v2.print_Vertex2d();
+	cout<< "]\n";
+}
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Implementation of Normal2d class
 //construction to construct a normal
@@ -131,6 +140,13 @@ void Edge2d_List::removeEdge(Edge2d e){
 	}
 }
 
+void Edge2d_List::print_Edge2d_List(){
+	cout << "Edges :  ";
+	for(int i=0;i<E.size();i++){
+		E[i].print_Edge2d();
+	}
+}
+
 //////////////////////////////////////////////////////////////
 //Other functions
 //function to check if two 2d_edges are equal
@@ -216,17 +232,5 @@ int max(int a,int b){
 		return b;
 }
 
-void print_Edge2d(Edge2d e){
-	cout<< "  [v1: ";
-	print_Vertex2d(e.v1);
-	cout<< "  v2: ";
-	print_Vertex2d(e.v2);
-	cout<< "]\n";
-}
 
-void print_Edge2d_List(Edge2d_List e_list){
-	cout << "Edges :  ";
-	for(int i=0;i<e_list.E.size();i++){
-		print_Edge2d(e_list.E[i]);
-	}
-}
+

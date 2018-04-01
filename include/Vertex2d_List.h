@@ -21,6 +21,7 @@ class Vertex2d{
 
  	Vertex2d (int x,int y);
 
+ 	void print_Vertex2d();
 
 
 };
@@ -42,14 +43,12 @@ class Vertex2d_List{
 	//function to delete a vertex from a vertexlist
 	void removeVertex (Vertex2d v);
 
+	void print_Vertex2d_List();
 
 };
 
 //function to check if two 2d_cordinates are equal
 bool equal_2dVertex(Vertex2d v1,Vertex2d v2);
 
-void print_Vertex2d(Vertex2d v);
-
-void print_Vertex2d_List(Vertex2d_List v_list);
 
 #endif

@@ -33,6 +33,8 @@ public:
 	//function to check if point lies inside the edge
 	bool check_inside(Vertex2d vertex);
 
+	void print_Edge2d();
+
 
 };
 
@@ -75,6 +77,7 @@ public:
 	//function to check if edge lies on the line
 	bool check_edge2d_in_line(Edge2d edge);	
 
+
 };
 
 /** EdgeList :- a list of edges **/
@@ -97,6 +100,8 @@ public:
 
 	//function to check presence of a parallel edge in an edgelist
 	bool check_parallelEdge(Edge2d edge_to_check);
+
+	void print_Edge2d_List();
 };
 
 //function to check if two 2d_edges are equal
@@ -127,8 +132,6 @@ int min(int a,int b);
 
 int max(int a,int b);
 
-void print_Edge2d(Edge2d e);
 
-void print_Edge2d_List(Edge2d_List e_list);
 
 #endif
