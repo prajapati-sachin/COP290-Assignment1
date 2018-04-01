@@ -7,6 +7,7 @@
 #include "../include/Surface3d_List.h"
 #include "../include/Vertex2d_List.h"
 #include "../include/Vertex3d_List.h"
+#include "../include/Common_functions.h"
 
 using namespace std;
 
@@ -68,6 +69,8 @@ int main(){
 
 	Solid3d solid = Solid3d(V,E,F);
 
-	Projection2d front_projection = solidmake_front_projections();
+	Projection2d front_projection = solid.make_front_projections();
+
+
 	return 0;
 }

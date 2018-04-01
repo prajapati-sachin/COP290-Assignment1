@@ -4,10 +4,10 @@ CFLAGS = Wall
 vpath src
 vpath include 
 
-main: main.o Edge2d_List.o Edge3d_List.o HiddenLines.o Projection2d.o Solid3d.o Surface3d_List.o Vertex2d_List.o Vertex3d_List.o Face3d_List.o
-	$(CXX) $(CXXFLAGS) -o main main.o Edge2d_List.o Edge3d_List.o HiddenLines.o Projection2d.o Solid3d.o Surface3d_List.o Vertex2d_List.o Vertex3d_List.o Face3d_List.o
+main: main.o Edge2d_List.o Edge3d_List.o HiddenLines.o Projection2d.o Solid3d.o Surface3d_List.o Vertex2d_List.o Vertex3d_List.o Face3d_List.o Common_functions.o
+	$(CXX) $(CXXFLAGS) -o main main.o Edge2d_List.o Edge3d_List.o HiddenLines.o Projection2d.o Solid3d.o Surface3d_List.o Vertex2d_List.o Vertex3d_List.o Face3d_List.o Common_functions.o
 
-main.o: src/main.cpp include/Edge2d_List.h include/Edge3d_List.h include/HiddenLines.h include/Projection2d.h include/Solid3d.h include/Surface3d_List.h include/Vertex2d_List.h include/Vertex3d_List.h
+main.o: src/main.cpp include/Edge2d_List.h include/Edge3d_List.h include/HiddenLines.h include/Projection2d.h include/Solid3d.h include/Surface3d_List.h include/Vertex2d_List.h include/Vertex3d_List.h include/Common_functions.h
 	$(CXX) $(CXXFLAGS) -c src/main.cpp
 
 Edge2d_List.o: src/Edge2d_List.cpp include/Edge2d_List.h
@@ -35,7 +35,10 @@ Vertex3d_List.o: src/Vertex3d_List.cpp include/Vertex3d_List.h
 	$(CXX) $(CXXFLAGS) -c src/Vertex3d_List.cpp	
 
 Face3d_List.o: src/Face3d_List.cpp include/Face3d_List.h	
-	$(CXX) $(CXXFLAGS) -c src/Face3d_List.cpp	
+	$(CXX) $(CXXFLAGS) -c src/Face3d_List.cpp
+
+Common_functions.o: src/Common_functions.cpp include/Common_functions.h	
+	$(CXX) $(CXXFLAGS) -c src/Common_functions.cpp	
 
 clean: 
 	$(RM) main *.o *~
