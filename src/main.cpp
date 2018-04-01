@@ -130,22 +130,36 @@ int main(int argc, char *argv[]){
 
 	// (side_projection.E).print_Edge2d_List();	
 //	p.setRenderHint(QPainter::Antialiasing);
-   	for(int i=0;i<((front_projection.V).V).size();i++){
-   		 p.drawPoint((((front_projection.V).V[i]).x),(((front_projection.V).V[i]).y));
+	p.setPen(QPen(Qt::black, 0.02, Qt::SolidLine, Qt::SquareCap));
+	for(int i=0;i<((front_projection.E).E).size();i++){
+   		 p.drawLine((((((front_projection.E).E)[i]).v1).x),(((((front_projection.E).E)[i]).v1).y), (((((front_projection.E).E)[i]).v2).x), (((((front_projection.E).E)[i]).v2).y));
    	}
 
-   	for(int i=0;i<((top_projection.V).V).size();i++){
-   		 p.drawPoint((((top_projection.V).V[i]).x),(((top_projection.V).V[i]).y));
+	for(int i=0;i<((top_projection.E).E).size();i++){
+   		 p.drawLine((((((top_projection.E).E)[i]).v1).x),(((((top_projection.E).E)[i]).v1).y), (((((top_projection.E).E)[i]).v2).x), (((((top_projection.E).E)[i]).v2).y));
    	}
 
-   	for(int i=0;i<((side_projection.V).V).size();i++){
-   		 p.drawPoint((((side_projection.V).V[i]).x),(((side_projection.V).V[i]).y));
+   	for(int i=0;i<((side_projection.E).E).size();i++){
+   		 p.drawLine((((((side_projection.E).E)[i]).v1).x),(((((side_projection.E).E)[i]).v1).y), (((((side_projection.E).E)[i]).v2).x), (((((side_projection.E).E)[i]).v2).y));
    	}
+   	// for(int i=0;i<((front_projection.V).V).size();i++){
+   	// 	 p.drawPoint((((front_projection.V).V[i]).x),(((front_projection.V).V[i]).y));
+   	// }
+
+   	// for(int i=0;i<((top_projection.V).V).size();i++){
+   	// 	 p.drawPoint((((top_projection.V).V[i]).x),(((top_projection.V).V[i]).y));
+   	// }
+
+   	// for(int i=0;i<((side_projection.V).V).size();i++){
+   	// 	 p.drawPoint((((side_projection.V).V[i]).x),(((side_projection.V).V[i]).y));
+   	// }
 
    	p.drawLine(0,0,5,0);
    	p.drawLine(0,0,-5,0);
 	p.drawLine(0,0,0,5);
    	p.drawLine(0,0,0,-5);
+
+//   	p.drawPoint(-1,1);
 
    	p.end(); // Don't forget this line!
    	l.setPicture(pi);
