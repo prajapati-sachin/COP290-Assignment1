@@ -10,6 +10,7 @@
 #include <math.h>
 #include <QtCore>
 #include <QtGui>
+#include <stdlib.h>
 
 
 #define PI 3.1415926536
@@ -39,58 +40,98 @@ int main(int argc, char *argv[]){
 	// Vertex3d v7 = Vertex3d(2,2,1);
 	// Vertex3d v8 = Vertex3d(2,2,2);
 
-	Vertex3d v1(1,1,1);
-	Vertex3d v2(1,1,2);
-	Vertex3d v3(1,2,1);
-	Vertex3d v4(1,2,2);
-	Vertex3d v5(2,1,1);
-	Vertex3d v6(2,1,2);
-	Vertex3d v7(2,2,1);
-	Vertex3d v8(2,2,2);
+// 	Vertex3d v1(1,1,1);
+// 	Vertex3d v2(1,1,2);
+// 	Vertex3d v3(1,2,1);
+// 	Vertex3d v4(1,2,2);
+// 	Vertex3d v5(2,1,1);
+// 	Vertex3d v6(2,1,2);
+// 	Vertex3d v7(2,2,1);
+// 	Vertex3d v8(2,2,2);
 
 
 
-	V.addVertex(v1);
-	V.addVertex(v2);
-	V.addVertex(v3);
-	V.addVertex(v4);
-	V.addVertex(v5);
-	V.addVertex(v6);
-	V.addVertex(v7);
-	V.addVertex(v8);
+// 	V.addVertex(v1);
+// 	V.addVertex(v2);
+// 	V.addVertex(v3);
+// 	V.addVertex(v4);
+// 	V.addVertex(v5);
+// 	V.addVertex(v6);
+// 	V.addVertex(v7);
+// 	V.addVertex(v8);
 
-//	V.print_Vertex3d_List();
-
-
-	Edge3d e1(v1,v2);
-	Edge3d e2(v1,v3);
-	Edge3d e3(v1,v5);
-	Edge3d e4(v2,v4);
-	Edge3d e5(v2,v6);
-	Edge3d e6(v3,v4);
-	Edge3d e7(v3,v7);
-	Edge3d e8(v4,v8);
-	Edge3d e9(v5,v6);
-	Edge3d e10(v5,v7);
-	Edge3d e11(v6,v8);
-	Edge3d e12(v7,v8);
+// //	V.print_Vertex3d_List();
 
 
+// 	Edge3d e1(v1,v2);
+// 	Edge3d e2(v1,v3);
+// 	Edge3d e3(v1,v5);
+// 	Edge3d e4(v2,v4);
+// 	Edge3d e5(v2,v6);
+// 	Edge3d e6(v3,v4);
+// 	Edge3d e7(v3,v7);
+// 	Edge3d e8(v4,v8);
+// 	Edge3d e9(v5,v6);
+// 	Edge3d e10(v5,v7);
+// 	Edge3d e11(v6,v8);
+// 	Edge3d e12(v7,v8);
 
-	E.addEdge(e1);
-	E.addEdge(e2);
-	E.addEdge(e3);
-	E.addEdge(e4);
-	E.addEdge(e5);
-	E.addEdge(e6);
-	E.addEdge(e7);
-	E.addEdge(e8);
-	E.addEdge(e9);
-	E.addEdge(e10);
-	E.addEdge(e11);
-	E.addEdge(e12);
+
+
+// 	E.addEdge(e1);
+// 	E.addEdge(e2);
+// 	E.addEdge(e3);
+// 	E.addEdge(e4);
+// 	E.addEdge(e5);
+// 	E.addEdge(e6);
+// 	E.addEdge(e7);
+// 	E.addEdge(e8);
+// 	E.addEdge(e9);
+// 	E.addEdge(e10);
+// 	E.addEdge(e11);
+// 	E.addEdge(e12);
 	
 //	E.print_Edge3d_List();
+
+
+FILE * file = fopen("cube.obj", "r");
+if( file == NULL ){
+    printf("Impossible to open the file !\n");
+    return false;
+}
+
+while(1){
+
+    char lineHeader[128];
+    // read the first word of the line
+    int res = fscanf(file, "%s", lineHeader);
+    if (res == EOF)
+        break; // EOF = End Of File. Quit the loop.
+    // else : parse lineHeader
+    else{
+    	if ( strcmp( lineHeader, "v" ) == 0 ){
+	    	int x,y,z;
+	    	fscanf(file, "%d %d %d\n", &x, &y, &z );
+	    	Vertex3d v(x,y,z);
+	    	V.addVertex(v);
+	    }
+    	else if ( strcmp( lineHeader, "f" ) == 0 ){
+		    int x,y,z;
+		    fscanf(file, "%d %d %d\n", &x, &y, &z);
+				
+			Edge3d e1(V.V[x-1],V.V[y-1]);	
+			Edge3d e2(V.V[y-1],V.V[z-1]);
+			Edge3d e3(V.V[x-1],V.V[z-1]);
+			E.addEdge(e1);
+			E.addEdge(e2);
+			E.addEdge(e3);
+		}
+    }
+    
+}
+
+	V.print_Vertex3d_List();
+	E.print_Edge3d_List();
 
 	Solid3d solid(V,E,F);
 
@@ -129,7 +170,7 @@ int main(int argc, char *argv[]){
 	// (side_projection.V).print_Vertex2d_List();
 
 	// (side_projection.E).print_Edge2d_List();	
-//	p.setRenderHint(QPainter::Antialiasing);
+	p.setRenderHint(QPainter::Antialiasing);
 	p.setPen(QPen(Qt::black, 0.02, Qt::SolidLine, Qt::SquareCap));
 	for(int i=0;i<((front_projection.E).E).size();i++){
    		 p.drawLine((((((front_projection.E).E)[i]).v1).x),(((((front_projection.E).E)[i]).v1).y), (((((front_projection.E).E)[i]).v2).x), (((((front_projection.E).E)[i]).v2).y));
