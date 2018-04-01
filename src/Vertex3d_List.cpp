@@ -181,10 +181,10 @@ Vertex2d_List Vertex3d_List::list_sideview(){
 
 
 void Vertex3d_List::print_Vertex3d_List(){
-	cout << "Vertices :  \n";
+	cout << "Vertices:  \n";
 	for(int i=0;i<V.size();i++){
 		V[i].print_Vertex3d();
-		cout << "\n";
+		cout << "\n";	
 	}	
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////

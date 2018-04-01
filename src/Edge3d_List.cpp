@@ -65,7 +65,7 @@ Edge2d Edge3d::edge2d_side(){
 
 
 void Edge3d::print_Edge3d(){
-	cout<< "  [v1: ";
+	cout<< "[v1: ";
 	x.print_Vertex3d();
 	cout<< "  v2: ";
 	y.print_Vertex3d();
@@ -147,7 +147,7 @@ Edge2d_List Edge3d_List::list_sideview(){
 }
 
 void Edge3d_List::print_Edge3d_List(){
-	cout << "Edges :  \n";
+	cout << "Edges:  \n";
 	for(int i=0;i<E.size();i++){
 		E[i].print_Edge3d();
 	}

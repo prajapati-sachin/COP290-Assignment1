@@ -12,11 +12,6 @@
 using namespace std;
 
 int main(){
-	int a=2;
-	int b=3;
-	int c;
-	c=a+b;
-	cout << c <<"\n";
 //	cout << "Hello World!\n";
 
 	Vertex3d_List V;
@@ -89,9 +84,9 @@ int main(){
 
 	cout << "Hello World!\n";
 
-//	print_Vertex2d_List(front_projection.V);
+	(front_projection.V).print_Vertex2d_List();
 
-//	print_Edge2d_List(front_projection.E);	
+	(front_projection.E).print_Edge2d_List();	
 
 	return 0;
 }
