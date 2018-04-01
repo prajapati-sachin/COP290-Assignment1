@@ -147,7 +147,7 @@ Edge2d_List Edge3d_List::list_sideview(){
 }
 
 void Edge3d_List::print_Edge3d_List(){
-	cout << "Edges :  ";
+	cout << "Edges :  \n";
 	for(int i=0;i<E.size();i++){
 		E[i].print_Edge3d();
 	}

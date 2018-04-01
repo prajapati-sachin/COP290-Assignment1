@@ -80,7 +80,8 @@ int main(){
 	E.addEdge(e10);
 	E.addEdge(e11);
 	E.addEdge(e12);
-
+	
+	E.print_Edge3d_List();
 
 	Solid3d solid(V,E,F);
 
