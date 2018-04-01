@@ -62,6 +62,16 @@ Edge2d Edge3d::edge2d_side(){
 	Edge2d result = Edge2d(first,second);
 	return result;
 }
+
+
+void Edge3d::print_Edge3d(){
+	cout<< "  [v1: ";
+	x.print_Vertex3d();
+	cout<< "  v2: ";
+	y.print_Vertex3d();
+	cout<< "]\n";
+}
+
 ////////////////////////////////////////////////////////////////////////////////////
 //Implementaion of class Edge3d_List
 
@@ -136,17 +146,9 @@ Edge2d_List Edge3d_List::list_sideview(){
 	}
 }
 
-void print_Edge3d(Edge3d e){
-	cout<< "  [v1: ";
-	print_Vertex3d(e.x);
-	cout<< "  v2: ";
-	print_Vertex3d(e.y);
-	cout<< "]\n";
-}
-
-void print_Edge3d_List(Edge3d_List e_list){
+void Edge3d_List::print_Edge3d_List(){
 	cout << "Edges :  ";
-	for(int i=0;i<e_list.E.size();i++){
-		print_Edge3d(e_list.E[i]);
+	for(int i=0;i<E.size();i++){
+		E[i].print_Edge3d();
 	}
 }

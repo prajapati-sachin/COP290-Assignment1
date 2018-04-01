@@ -113,6 +113,13 @@ Vertex2d Vertex3d::point2d_side(){
 	Vertex2d temp(x1,y1);
 	return temp;
 }
+
+
+void Vertex3d::print_Vertex3d(){
+	cout << "{" << x << " " << y << " " << z << "}" <<"\n";	
+}
+
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Implementation of class Vertex3d_List.h
 Vertex3d_List::Vertex3d_List(){};
@@ -171,15 +178,12 @@ Vertex2d_List Vertex3d_List::list_sideview(){
 		(side_projections.V).push_back(projection);
 	}	
 }
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-void print_Vertex3d(Vertex3d v){
-	cout << "{" << v.x << " " << v.y << " " << v.z << "}" <<"\n";	
-}
 
-void print_Vertex3d_List(Vertex3d_List v_list){
+void Vertex3d_List::print_Vertex3d_List(){
 	cout << "Vertices :  ";
-	for(int i=0;i<v_list.V.size();i++){
-		print_Vertex3d(v_list.V[i]);
+	for(int i=0;i<V.size();i++){
+		V[i].print_Vertex3d();
 	}	
 }
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////

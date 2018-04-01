@@ -33,6 +33,7 @@ class Vertex3d{
 
  	Vertex2d point2d_side();
 
+ 	void print_Vertex3d();
 
 
 };
@@ -66,6 +67,8 @@ public:
 	//function which gives the corresponding list of 2d vertices in side view 
 	Vertex2d_List list_sideview();
 
+	
+	void print_Vertex3d_List();
 
 };
 
@@ -82,8 +85,6 @@ namespace extra_functions_3dvertex{
 	int vertex_index(vector<Vertex3d> vlist, Vertex3d v);
 }
 
-void print_Vertex3d(Vertex3d v);
 
-void print_Vertex3d_List(Vertex3d_List v_list);
 
 #endif

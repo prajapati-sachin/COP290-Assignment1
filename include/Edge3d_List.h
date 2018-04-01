@@ -32,6 +32,7 @@ class Edge3d{
 	// projection of edge in sideview
 	Edge2d edge2d_side();
 
+	void print_Edge3d();
 };
 
 /** EdgeList :- a list of edges **/
@@ -66,6 +67,7 @@ class Edge3d_List{
 	//function to create edge list from given edgefist in 3d and 2d vertex list in side view
 	Edge2d_List list_sideview();
 
+	void print_Edge3d_List();
 
 };
 
@@ -83,8 +85,7 @@ namespace extra_functions_3dedge{
 	int edge_index(vector<Edge3d> elist, Edge3d e);
 }
 
-void print_Edge3d(Edge3d e);
 
-void print_Edge3d_List(Edge3d_List e_list);
+
 
 #endif
