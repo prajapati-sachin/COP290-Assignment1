@@ -82,17 +82,17 @@ int main(){
 	E.addEdge(e12);
 	
 	E.print_Edge3d_List();
-	
+
 	Solid3d solid(V,E,F);
-	
+
 	Projection2d front_projection = solid.make_front_projections();
-	
+
 
 	cout << "Hello World!\n";
 
-	// print_Vertex2d_List(front_projection.V);
+	front_projection.V.print_Vertex2d_List();
 
-	// print_Edge2d_List(front_projection.E);	
+	front_projection.E.print_Edge2d_List();	
 
 	return 0;
 }
