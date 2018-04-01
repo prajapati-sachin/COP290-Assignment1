@@ -17,8 +17,10 @@ Solid3d::Solid3d (Projection projections){
 	Projection2d topview = projections.top;
 	Projection2d sideview = projections.side;
 
-	Vertex3d_List V = Vertex3d_List(frontview.V,topview.V,sideview.V);
-	Edge3d_List E = Edge3d_List(frontview.E,topview.E,sideview.E,V);
+	V = Vertex3d_List(frontview.V,topview.V,sideview.V);
+	
+	E = Edge3d_List(frontview.E,topview.E,sideview.E,V);
+
 
 }
 

@@ -21,13 +21,12 @@ namespace extra_functions_3dvertex{
 
 	Vertex3d vertex3d_generate(Vertex2d front, Vertex2d top, Vertex2d side){
 		int x1,y1,z1;
-		if(extra_functions_3dvertex::vertex3d_possible(front, top ,side)){
 		x1=(front.x);
 		y1=(front.y);
 		z1=(-1)*(top.y);
 		Vertex3d temp(x1,y1,z1);
 		return temp;		
-		}
+		
 	}
 
 
@@ -40,7 +39,12 @@ namespace extra_functions_3dvertex{
 			for(int j=0;j<top.size();j++){
 				for(int k=0;k<side.size();k++){
 					 if(extra_functions_3dvertex::vertex3d_possible(front[i],top[j],side[k])){
-						accumulator_list.push_back(extra_functions_3dvertex::vertex3d_generate(front[i],top[j],side[k]));
+						Vertex3d ve = extra_functions_3dvertex::vertex3d_generate(front[i],top[j],side[k]);
+						Vertex3d_List ve_list;
+						ve_list.V = accumulator_list;
+						if(!ve_list.checkVertex(ve)){
+							accumulator_list.push_back(ve);
+						}
 					}
 				}
 			}
