@@ -7,12 +7,25 @@
 #include "../include/Surface3d_List.h"
 #include "../include/Vertex2d_List.h"
 #include "../include/Vertex3d_List.h"
+#include <math.h>
+#include <QtCore>
+#include <QtGui>
 
+
+#define PI 3.1415926536
+#define SIZE 200
+#define FACTOR 100
+
+const float STEP = 2*PI/SIZE;
 
 using namespace std;
 
-int main(){
+int main(int argc, char *argv[]){
 //	cout << "Hello World!\n";
+	QApplication a(argc, argv);
+    QLabel l;
+    QPicture pi;
+    QPainter p(&pi);
 
 	Vertex3d_List V;
 	Edge3d_List E;
@@ -46,7 +59,7 @@ int main(){
 	V.addVertex(v7);
 	V.addVertex(v8);
 
-	V.print_Vertex3d_List();
+//	V.print_Vertex3d_List();
 
 	Edge3d e1(v1,v2);
 	Edge3d e2(v1,v3);
@@ -76,24 +89,41 @@ int main(){
 	E.addEdge(e11);
 	E.addEdge(e12);
 	
-	E.print_Edge3d_List();
+//	E.print_Edge3d_List();
 
 	Solid3d solid(V,E,F);
 
 	Projection2d front_projection = solid.make_front_projections();
 
+	Projection2d top_projection = solid.make_top_projections();
 
-	cout << "Hello World!\n";
+	Projection2d side_projection = solid.make_side_projections();
 
-<<<<<<< HEAD
-	(front_projection.V).print_Vertex2d_List();
+	// (front_projection.V).print_Vertex2d_List();
 
-	(front_projection.E).print_Edge2d_List();	
-=======
-	front_projection.V.print_Vertex2d_List();
+	// (front_projection.E).print_Edge2d_List();	
+	
+	// (top_projection.V).print_Vertex2d_List();
 
-	front_projection.E.print_Edge2d_List();	
->>>>>>> a039cd708912bc9830eec2484db1cc98008f9e76
+	// (top_projection.E).print_Edge2d_List();	
+	
+	// (side_projection.V).print_Vertex2d_List();
 
-	return 0;
+	// (side_projection.E).print_Edge2d_List();	
+	p.setRenderHint(QPainter::Antialiasing);
+   	for(int i=0;i<((front_projection.V).V).size();i++){
+   		 p.drawPoint((((front_projection.V).V[i]).x),(((front_projection.V).V[i]).y));
+   	}
+
+   	p.drawLine(0,0,5,0);
+   	p.drawLine(0,0,-5,0);
+	p.drawLine(0,0,0,5);
+   	p.drawLine(0,0,0,-5);
+
+   	p.end(); // Don't forget this line!
+   	l.setPicture(pi);
+   	l.show();
+   	l.setScaledContents(true);
+   	
+   	return a.exec();
 }

@@ -44,7 +44,7 @@ bool Edge2d::check_inside(Vertex2d vertex){
 
 
 void Edge2d::print_Edge2d(){
-	cout<< "  [v1: ";
+	cout<< "[v1: ";
 	v1.print_Vertex2d();
 	cout<< "  v2: ";
 	v2.print_Vertex2d();
@@ -141,7 +141,7 @@ void Edge2d_List::removeEdge(Edge2d e){
 }
 
 void Edge2d_List::print_Edge2d_List(){
-	cout << "Edges :  ";
+	cout << "Edges :  \n";
 	for(int i=0;i<E.size();i++){
 		E[i].print_Edge2d();
 	}

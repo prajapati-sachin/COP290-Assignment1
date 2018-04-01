@@ -116,7 +116,7 @@ Vertex2d Vertex3d::point2d_side(){
 
 
 void Vertex3d::print_Vertex3d(){
-	cout << "{" << x << " " << y << " " << z << "}" <<"\n";	
+	cout << "{" << x << " " << y << " " << z << "}";	
 }
 
 
@@ -184,16 +184,10 @@ Vertex2d_List Vertex3d_List::list_sideview(){
 
 
 void Vertex3d_List::print_Vertex3d_List(){
-<<<<<<< HEAD
 	cout << "Vertices:  \n";
 	for(int i=0;i<V.size();i++){
 		V[i].print_Vertex3d();
 		cout << "\n";	
-=======
-	cout << "Vertices :  ";
-	for(int i=0;i<V.size();i++){
-		V[i].print_Vertex3d();
->>>>>>> a039cd708912bc9830eec2484db1cc98008f9e76
-	}	
+	}
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////

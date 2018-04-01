@@ -19,7 +19,7 @@ Vertex2d::Vertex2d(){};
 // 	this->y=0;
 // }
 void Vertex2d::print_Vertex2d(){
-	cout << "{" << x << "," << y << "}" <<"\n";
+	cout << "{" << x << "," << y << "}" ;
 }
 
 
@@ -55,9 +55,10 @@ void Vertex2d_List::removeVertex(Vertex2d v){
 }
 
 void Vertex2d_List::print_Vertex2d_List(){
-	cout << "Vertices :  ";
+	cout << "Vertices :  \n";
 	for(int i=0;i<V.size();i++){
 		V[i].print_Vertex2d();
+		cout << "\n";
 	}
 }
 
