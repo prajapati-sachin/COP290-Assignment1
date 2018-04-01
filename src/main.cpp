@@ -71,6 +71,9 @@ int main(){
 
 	Projection2d front_projection = solid.make_front_projections();
 
+	print_Vertex2d_List(front_projection.V);
+
+	print_Edge2d_List(front_projection.E);	
 
 	return 0;
 }
