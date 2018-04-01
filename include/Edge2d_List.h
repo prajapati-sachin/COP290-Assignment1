@@ -2,7 +2,7 @@
 #define EDGE2D_LIST
 
 #include <vector>
-#include "Common_functions.h"
+#include <iostream>
 #include "Vertex2d_List.h"
 
 
@@ -126,4 +126,9 @@ int product_of_normal_vertex_in2d(Normal2d normal,Vertex2d vertex);
 int min(int a,int b);
 
 int max(int a,int b);
+
+void print_Edge2d(Edge2d e);
+
+void print_Edge2d_List(Edge2d_List e_list);
+
 #endif

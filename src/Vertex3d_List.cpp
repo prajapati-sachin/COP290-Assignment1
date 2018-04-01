@@ -172,3 +172,14 @@ Vertex2d_List Vertex3d_List::list_sideview(){
 	}	
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+void print_Vertex3d(Vertex3d v){
+	cout << "{" << v.x << " " << v.y << " " << v.z << "}" <<"\n";	
+}
+
+void print_Vertex3d_List(Vertex3d_List v_list){
+	cout << "Vertices :  ";
+	for(int i=0;i<v_list.V.size();i++){
+		print_Vertex3d(v_list.V[i]);
+	}	
+}

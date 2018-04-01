@@ -2,6 +2,7 @@
 #define VERTEX2D_LIST
 
 #include <vector>
+#include <iostream>
 
 
 using namespace std;
@@ -46,5 +47,9 @@ class Vertex2d_List{
 
 //function to check if two 2d_cordinates are equal
 bool equal_2dVertex(Vertex2d v1,Vertex2d v2);
+
+void print_Vertex2d(Vertex2d v);
+
+void print_Vertex2d_List(Vertex2d_List v_list);
 
 #endif

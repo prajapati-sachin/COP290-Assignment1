@@ -2,6 +2,7 @@
 #define VERTEX3D_LIST
 
 #include <vector>
+#include <iostream>
 #include "Vertex2d_List.h"
 
 
@@ -81,5 +82,8 @@ namespace extra_functions_3dvertex{
 	int vertex_index(vector<Vertex3d> vlist, Vertex3d v);
 }
 
+void print_Vertex3d(Vertex3d v);
+
+void print_Vertex3d_List(Vertex3d_List v_list);
 
 #endif

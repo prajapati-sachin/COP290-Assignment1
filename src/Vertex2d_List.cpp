@@ -57,3 +57,14 @@ void Vertex2d_List::removeVertex(Vertex2d v){
 bool equal_2dVertex(Vertex2d v1,Vertex2d v2){
 	return (((v1.x-v2.x)==DELTA)&&((v1.y-v2.y)==DELTA));
 }
+
+void print_Vertex2d(Vertex2d v){
+	cout << "{" << v.x << "," << v.y << "}" <<"\n";
+}
+
+void print_Vertex2d_List(Vertex2d_List v_list){
+	cout << "Vertices :  ";
+	for(int i=0;i<v_list.V.size();i++){
+		print_Vertex2d(v_list.V[i]);
+	}
+}

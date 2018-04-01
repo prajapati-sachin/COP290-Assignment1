@@ -7,7 +7,7 @@
 #include "../include/Surface3d_List.h"
 #include "../include/Vertex2d_List.h"
 #include "../include/Vertex3d_List.h"
-#include "../include/Common_functions.h"
+
 
 using namespace std;
 

@@ -3,6 +3,7 @@
 #define EDGE3D_LIST
 
 #include <vector>
+#include <iostream>
 #include "Edge2d_List.h"
 #include "Vertex3d_List.h"
 
@@ -81,4 +82,9 @@ namespace extra_functions_3dedge{
 	//function which given a 3d edge vector and a edge gives the index at which edge is present
 	int edge_index(vector<Edge3d> elist, Edge3d e);
 }
+
+void print_Edge3d(Edge3d e);
+
+void print_Edge3d_List(Edge3d_List e_list);
+
 #endif

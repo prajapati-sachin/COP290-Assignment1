@@ -215,3 +215,18 @@ int max(int a,int b){
 	else
 		return b;
 }
+
+void print_Edge2d(Edge2d e){
+	cout<< "  [v1: ";
+	print_Vertex2d(e.v1);
+	cout<< "  v2: ";
+	print_Vertex2d(e.v2);
+	cout<< "]\n";
+}
+
+void print_Edge2d_List(Edge2d_List e_list){
+	cout << "Edges :  ";
+	for(int i=0;i<e_list.E.size();i++){
+		print_Edge2d(e_list.E[i]);
+	}
+}
