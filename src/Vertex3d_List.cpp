@@ -116,7 +116,7 @@ Vertex2d Vertex3d::point2d_side(){
 
 
 void Vertex3d::print_Vertex3d(){
-	cout << "(" << x << ", " << y << ", " << z << ")" ;	
+	cout << "{" << x << " " << y << " " << z << "}" <<"\n";	
 }
 
 
@@ -157,6 +157,7 @@ Vertex2d_List Vertex3d_List::list_frontview(){
 		Vertex2d projection = temp.point2d_front();
 		(front_projections.V).push_back(projection);
 	}
+	return front_projections;
 }
 
 Vertex2d_List Vertex3d_List::list_topview(){
@@ -166,6 +167,7 @@ Vertex2d_List Vertex3d_List::list_topview(){
 		Vertex2d projection = temp.point2d_top();
 		(top_projections.V).push_back(projection);
 	}
+	return top_projections;
 }
 
 
@@ -176,15 +178,15 @@ Vertex2d_List Vertex3d_List::list_sideview(){
 		Vertex3d temp = V[i];
 		Vertex2d projection = temp.point2d_side();
 		(side_projections.V).push_back(projection);
-	}	
+	}
+	return side_projections;	
 }
 
 
 void Vertex3d_List::print_Vertex3d_List(){
-	cout << "Vertices :  \n";
+	cout << "Vertices :  ";
 	for(int i=0;i<V.size();i++){
 		V[i].print_Vertex3d();
-		cout << "\n";
 	}	
 }
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////

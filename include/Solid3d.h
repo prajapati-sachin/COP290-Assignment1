@@ -2,6 +2,7 @@
 #define SOLID3D
 
 #include <vector>
+#include <iostream>
 #include "Vertex3d_List.h"
 #include "Edge3d_List.h"
 #include "Face3d_List.h"
