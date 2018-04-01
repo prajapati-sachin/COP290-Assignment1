@@ -94,7 +94,7 @@ int main(int argc, char *argv[]){
 //	E.print_Edge3d_List();
 
 
-FILE * file = fopen("cube.obj", "r");
+FILE * file = fopen("examples/pyramid.obj", "r");
 if( file == NULL ){
     printf("Impossible to open the file !\n");
     return false;
@@ -130,8 +130,8 @@ while(1){
     
 }
 
-	V.print_Vertex3d_List();
-	E.print_Edge3d_List();
+//	V.print_Vertex3d_List();
+//	E.print_Edge3d_List();
 
 	Solid3d solid(V,E,F);
 
