@@ -82,11 +82,18 @@ int main(){
 
 	Projection2d front_projection = solid.make_front_projections();
 
+
 	cout << "Hello World!\n";
 
+<<<<<<< HEAD
 	(front_projection.V).print_Vertex2d_List();
 
 	(front_projection.E).print_Edge2d_List();	
+=======
+	front_projection.V.print_Vertex2d_List();
+
+	front_projection.E.print_Edge2d_List();	
+>>>>>>> a039cd708912bc9830eec2484db1cc98008f9e76
 
 	return 0;
 }

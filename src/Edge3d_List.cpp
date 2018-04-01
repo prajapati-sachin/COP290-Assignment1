@@ -124,6 +124,7 @@ Edge2d_List Edge3d_List::list_frontview(){
 		Edge2d projection = temp.edge2d_front();
 		(front_projections.E).push_back(projection);
 	}
+	return front_projections;
 }
 
 
@@ -134,6 +135,7 @@ Edge2d_List Edge3d_List::list_topview(){
 		Edge2d projection = temp.edge2d_top();
 		(top_projections.E).push_back(projection);
 	}
+	return top_projections;
 }
 
 
@@ -144,6 +146,7 @@ Edge2d_List Edge3d_List::list_sideview(){
 		Edge2d projection = temp.edge2d_side();
 		(side_projections.E).push_back(projection);
 	}
+	return side_projections;
 }
 
 void Edge3d_List::print_Edge3d_List(){
