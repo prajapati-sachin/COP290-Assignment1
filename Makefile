@@ -1,9 +1,9 @@
 #MakeFile
 CXX = g++
 LFLAGS        = -m64
-CXXFLAGS      = -m64 -pipe -O2 -Wall -W -D_REENTRANT $(DEFINES) -Wno-sign-compare
+CXXFLAGS      = -m64 -pipe -O2 -Wall -W -D_REENTRANT $(DEFINES) -Wno-sign-compare -Wno-unused-result -Wno-unused-variable
 INCPATH       = -I/usr/share/qt4/mkspecs/linux-g++-64 -I. -I/usr/include/qt4/QtCore -I/usr/include/qt4/QtGui -I/usr/include/qt4 -I.
-LIBS          = -L/usr/lib/x86_64-linux-gnu/ -lm -lQtGui
+LIBS          = -L/usr/lib/x86_64-linux-gnu/ -lm -lQtGui -lpthread -lGL -lGLU -lglut
 DEFINES       = -DQT_NO_DEBUG -DQT_GUI_LIB
 
 main: main.o Edge2d_List.o Edge3d_List.o HiddenLines.o Projection2d.o Solid3d.o Surface3d_List.o Vertex2d_List.o Vertex3d_List.o Face3d_List.o
