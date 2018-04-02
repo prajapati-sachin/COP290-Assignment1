@@ -429,10 +429,10 @@ int main(int argc, char *argv[]){
 
 		Solid3d solid1(projections);
 
-		solid1.V.print_Vertex3d_List();
+		// solid1.V.print_Vertex3d_List();
 
-		solid1.E.print_Edge3d_List();  
-		p.setRenderHint(QPainter::Antialiasing);
+		// solid1.E.print_Edge3d_List();  
+		// p.setRenderHint(QPainter::Antialiasing);
 		p.setPen(QPen(Qt::black, 1, Qt::SolidLine, Qt::SquareCap)); 
 
 /////////////////////////////////////////////////////
