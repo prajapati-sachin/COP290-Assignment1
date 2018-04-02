@@ -27,8 +27,8 @@ const float STEP = 2*PI/SIZE;
 using namespace std;
 void init(void);
 void display(void);
-Edge3d_List ex;
 
+Edge2d_List ex;
 
 int main(int argc, char *argv[]){
 //	cout << "Hello World!\n";
@@ -185,17 +185,17 @@ int main(int argc, char *argv[]){
 
 		// (side_projection.E).print_Edge2d_List();	
 		p.setRenderHint(QPainter::Antialiasing);
-		p.setPen(QPen(Qt::black, 0.02, Qt::SolidLine, Qt::SquareCap));
+		p.setPen(QPen(Qt::black, 1, Qt::SolidLine, Qt::SquareCap));
 		for(int i=0;i<((front_projection.E).E).size();i++){
-	   		 p.drawLine((((((front_projection.E).E)[i]).v1).x)+1,(((((front_projection.E).E)[i]).v1).y)+1, (((((front_projection.E).E)[i]).v2).x)+1, (((((front_projection.E).E)[i]).v2).y)+1);
+	   		 p.drawLine(((((((front_projection.E).E)[i]).v1).x)+1)*100,((((((front_projection.E).E)[i]).v1).y)+1)*100, ((((((front_projection.E).E)[i]).v2).x)+1)*100, ((((((front_projection.E).E)[i]).v2).y)+1)*100);
 	   	}
 
 		for(int i=0;i<((top_projection.E).E).size();i++){
-	   		 p.drawLine((((((top_projection.E).E)[i]).v1).x)+1,(((((top_projection.E).E)[i]).v1).y)-1, (((((top_projection.E).E)[i]).v2).x)+1, (((((top_projection.E).E)[i]).v2).y)-1);
+	   		 p.drawLine(((((((top_projection.E).E)[i]).v1).x)+1)*100,((((((top_projection.E).E)[i]).v1).y)-1)*100, ((((((top_projection.E).E)[i]).v2).x)+1)*100, ((((((top_projection.E).E)[i]).v2).y)-1)*100);
 	   	}
 
 	   	for(int i=0;i<((side_projection.E).E).size();i++){
-	   		 p.drawLine((((((side_projection.E).E)[i]).v1).x)-1,(((((side_projection.E).E)[i]).v1).y)+1, (((((side_projection.E).E)[i]).v2).x)-1, (((((side_projection.E).E)[i]).v2).y)+1);
+	   		 p.drawLine(((((((side_projection.E).E)[i]).v1).x)-1)*100,((((((side_projection.E).E)[i]).v1).y)+1)*100, ((((((side_projection.E).E)[i]).v2).x)-1)*100, ((((((side_projection.E).E)[i]).v2).y)+1)*100);
 	   	}
 	   	// for(int i=0;i<((front_projection.V).V).size();i++){
 	   	// 	 p.drawPoint((((front_projection.V).V[i]).x),(((front_projection.V).V[i]).y));
@@ -209,10 +209,10 @@ int main(int argc, char *argv[]){
 	   	// 	 p.drawPoint((((side_projection.V).V[i]).x),(((side_projection.V).V[i]).y));
 	   	// }
 
-	   	p.drawLine(0,0,5,0);
-	   	p.drawLine(0,0,-5,0);
-		p.drawLine(0,0,0,5);
-	   	p.drawLine(0,0,0,-5);
+	   	p.drawLine(700,0,-700,0);
+	   	p.drawLine(0,600,0,-600);
+		// p.drawLine(0,0,0,5);
+	 //   	p.drawLine(0,0,0,-5);
 
 	//   	p.drawPoint(-1,1);
 
@@ -229,7 +229,10 @@ int main(int argc, char *argv[]){
   		Vertex3d_List V;
 		Edge3d_List E;
 		Face3d_List F;
-
+		QApplication a(argc, argv);
+	    QLabel l;
+	    QPicture pi;
+	    QPainter p(&pi);
 
 		Vertex3d v1(1,1,1);
 		Vertex3d v2(1,1,2);
@@ -239,6 +242,16 @@ int main(int argc, char *argv[]){
 		Vertex3d v6(2,1,2);
 		Vertex3d v7(2,2,1);
 		Vertex3d v8(2,2,2);
+
+
+		// Vertex3d v1(0,0,0);
+		// Vertex3d v2(2,0,0);
+		// Vertex3d v3(2,2,0);
+		// Vertex3d v4(0,2,0);
+		// Vertex3d v5(0.05,0.05,0.05);
+		// // Vertex3d v6(2,1,2);
+		// // Vertex3d v7(2,2,1);
+		// // Vertex3d v8(2,2,2);
 
 
 
@@ -251,7 +264,7 @@ int main(int argc, char *argv[]){
 		V.addVertex(v7);
 		V.addVertex(v8);
 
-		//V.print_Vertex3d_List();
+		// V.print_Vertex3d_List();
 
 
 		Edge3d e1(v1,v2);
@@ -266,6 +279,19 @@ int main(int argc, char *argv[]){
 		Edge3d e10(v5,v7);
 		Edge3d e11(v6,v8);
 		Edge3d e12(v7,v8);
+
+		// Edge3d e1(v1,v2);
+		// Edge3d e2(v2,v3);
+		// Edge3d e3(v3,v4);
+		// Edge3d e4(v4,v1);
+		// Edge3d e5(v2,v5);
+		// Edge3d e6(v3,v5);
+		// Edge3d e7(v1,v5);
+		// Edge3d e8(v4,v5);
+		// // Edge3d e9(v5,v6);
+		// Edge3d e10(v5,v7);
+		// Edge3d e11(v6,v8);
+		// Edge3d e12(v7,v8);
 
 
 
@@ -405,99 +431,139 @@ int main(int argc, char *argv[]){
 
 		solid1.V.print_Vertex3d_List();
 
-		solid1.E.print_Edge3d_List();   
+		solid1.E.print_Edge3d_List();  
+		p.setRenderHint(QPainter::Antialiasing);
+		p.setPen(QPen(Qt::black, 1, Qt::SolidLine, Qt::SquareCap)); 
 
-		ex=solid1.E;
+/////////////////////////////////////////////////////
+		for(int i=0;i<((solid1.E).E).size();i++){
+			float x1 =100*((((solid1.E).E)[i]).x).x;
+			float y1 =100*((((solid1.E).E)[i]).x).y;
+			float z1 =100*((((solid1.E).E)[i]).x).z;
+			float x2 =100*((((solid1.E).E)[i]).y).x;
+			float y2 =100*((((solid1.E).E)[i]).y).y;
+			float z2 =100*((((solid1.E).E)[i]).y).z;
+			
+			float ax1 = ((x1-z1)*sqrt(3))/sqrt(2);
+			float ay1 = (x1+ (2*y1)+ z1)/sqrt(6);
+			float az1 = (x1-y1+z1)/sqrt(3);
+
+			float ax2 = ((x2-z2)*sqrt(3))/sqrt(2);
+			float ay2 = (x2+ (2*y2)+ z2)/sqrt(6);
+			float az2 = (x2-y2+z2)/sqrt(3);
+
+			Vertex2d v1(ax1, ay1);
+			Vertex2d v2(ax2, ay2);
+			Edge2d temp(v1,v2);
+			p.drawLine(ax1,ay1 ,ax2 ,ay2);
+			ex.addEdge(temp);
+		}
+
+	 //   	p.drawLine(700,0,-700,0);
+	 //   	p.drawLine(0,600,0,-600);
+		// p.drawLine(0,0,0,5);
+	 //   	p.drawLine(0,0,0,-5);
+
+
+		p.end(); // Don't forget this line!
+	   	l.setPicture(pi);
+	   	l.show();
+	   	// l.setScaledContents(true);
+	   	
+	   	return a.exec();
     
 		 
 		
-		  glutInit(&argc, argv);
-		  glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
-		  glutInitWindowSize(300, 300);
-		  glutInitWindowPosition(400, 400);
-		  glutCreateWindow("Solid Model");
-		  init();
-		  glutDisplayFunc(display);
-		  glutMainLoop();
-		  return 0;
+		  // glutInit(&argc, argv);
+		  // glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
+		  // glutInitWindowSize(300, 300);
+		  // glutInitWindowPosition(400, 400);
+		  // glutCreateWindow("Solid Model");
+		  // init();
+		  // glutDisplayFunc(display);
+		  // glutMainLoop();
+		  // return 0;
 		
-
-
-   }
+	
+	}
 
 }
 
-		void init(void)
-		{
-		  glClearColor(0.0, 0.0, 1.0, 0.0);
-		  glMatrixMode(GL_PROJECTION);
-		  glLoadIdentity();
-		  glOrtho(0.0, 1.0, 0.0, 1.0, -1.0, 1.0);
-		}
+		// void init(void)
+		// {
+		//   glClearColor(0.0, 0.0, 1.0, 0.0);
+		//   glMatrixMode(GL_PROJECTION);
+		//   glLoadIdentity();
+		//   glOrtho(0.0, 1.0, 0.0, 1.0, -1.0, 1.0);
+		// }
 		 
 	
-		void display(void)
-		{
-			glClearColor(0.0, 0.0, 0.0, 1.0);
-			glClear(GL_COLOR_BUFFER_BIT);
+		// void display(void)
+		// {
+		// 	glClearColor(0.0, 0.0, 0.0, 1.0);
+		// 	glClear(GL_COLOR_BUFFER_BIT);
 
-			glMatrixMode(GL_PROJECTION);
-			glLoadIdentity();
+		// 	glMatrixMode(GL_PROJECTION);
+		// 	glLoadIdentity();
+		// 	// glLoadIdentity ();
+		// 	// // gluLookAt (12., 10., 10.,  5., 0., 5.,  0., 0., 1.);
+		// 	glPushMatrix ();
+		// 	// glScalef(0.5, 0.5, 0.5);
+		// 	// // glRotatef(-45.0,1.0,0.0,0.0);
+		// 	// glRotatef(-45.0,0.0,1.0,0.0);
+		// 	// /* use this length so that camera is 1 unit away from origin */
+		// 	double dist = sqrt(5/ 3.0);
 
-			/* use this length so that camera is 1 unit away from origin */
-			double dist = sqrt(7 / 3.0);
+		// 	gluLookAt(dist, dist, dist,  /* position of camera */
+		// 	          0.0,  0.0, -0.5,    //where camera is pointing at  
+		// 	          0.0,  1.0,  0.0);  /* which direction is up */
+		// 	 glMatrixMode(GL_MODELVIEW);
 
-			gluLookAt(dist, dist, dist,  /* position of camera */
-			          -1.0,  0.0, 0.0,   /* where camera is pointing at*/  
-			          0.0,  1.0,  0.0);  /* which direction is up */
-			 glMatrixMode(GL_MODELVIEW);
+		// 	glBegin(GL_LINES);
 
-			glBegin(GL_LINES);
+		// 	for(int i=0;i<ex.E.size();i++){
+		// 		// glColor3f(1.0, 0.0, 0.0);
+		// 		// glVertex3f(1.0, 1.0, 1.0);
+		// 		// glVertex3f(1.0, 1.0, 2.0);
 
-			for(int i=0;i<ex.E.size();i++){
-				// glColor3f(1.0, 0.0, 0.0);
-				// glVertex3f(1.0, 1.0, 1.0);
-				// glVertex3f(1.0, 1.0, 2.0);
+		// 		// glColor3f(1.0, 0.0, 0.0);
+		// 		// glVertex3f(1.0, 1.0, 1.0);
+		// 		// glVertex3f(1.0, 2.0, 2.0);
 
-				// glColor3f(1.0, 0.0, 0.0);
-				// glVertex3f(1.0, 1.0, 1.0);
-				// glVertex3f(1.0, 2.0, 2.0);
+		// 		// glColor3f(1.0, 0.0, 0.0);
+		// 		// glVertex3f(1.0, 1.0, 1.0);
+		// 		// glVertex3f(2.0, 1.0, 1.0);
 
-				// glColor3f(1.0, 0.0, 0.0);
-				// glVertex3f(1.0, 1.0, 1.0);
-				// glVertex3f(2.0, 1.0, 1.0);
+		// 		// glColor3f(1.0, 0.0, 0.0);
+		// 		// glVertex3f(1.0, 1.0, 1.0);
+		// 		// glVertex3f(2.0, 1.0, 2.0);
 
-				// glColor3f(1.0, 0.0, 0.0);
-				// glVertex3f(1.0, 1.0, 1.0);
-				// glVertex3f(2.0, 1.0, 2.0);
+		// 		//   glColor3f(1.0, 1.0, 0.0);
+		// 		//   glVertex3f(1.0, 2.0, 2.0);
+		// 		//   glVertex3f(2.0, 2.0, 2.0);
 
-				//   glColor3f(1.0, 1.0, 0.0);
-				//   glVertex3f(1.0, 2.0, 2.0);
-				//   glVertex3f(2.0, 2.0, 2.0);
+		// 		//   glColor3f(1.0, 0.0, 1.0);
+		// 		//   glVertex3f(2.0, 1.0, 1.0);
+		// 		//   glVertex3f(1.0, 1.0, 1.0);
 
-				//   glColor3f(1.0, 0.0, 1.0);
-				//   glVertex3f(2.0, 1.0, 1.0);
-				//   glVertex3f(1.0, 1.0, 1.0);
+		// 		//   glColor3f(1.0, 1.0, 0.0);
+		// 		//   glVertex3f(2.0, 1.0, 1.0);
+		// 		//   glVertex3f(2.0, 1.0, 2.0);
 
-				//   glColor3f(1.0, 1.0, 0.0);
-				//   glVertex3f(2.0, 1.0, 1.0);
-				//   glVertex3f(2.0, 1.0, 2.0);
+		// 		//   glColor3f(1.0, 0.0, 0.0);
+		// 		//   glVertex3f(2.0, 1.0, 1.0);
+		// 		//   glVertex3f(2.0, 2.0, 2.0);
 
-				//   glColor3f(1.0, 0.0, 0.0);
-				//   glVertex3f(2.0, 1.0, 1.0);
-				//   glVertex3f(2.0, 2.0, 2.0);
+		// 		//   glColor3f(1.0, 0.0, 0.0);
+		// 		//   glVertex3f(2.0, 1.0, 2.0);
+		// 		//   glVertex3f(1.0, 1.0, 2.0);
+		// 		  glColor3f(1.0, 0.0, 0.0);
+		// 		  glVertex3f((((ex).E[i]).x).x, (((ex).E[i]).x).y,(((ex).E[i]).x).z);
+		// 		  glVertex3f((((ex).E[i]).y).x, (((ex).E[i]).y).y, (((ex).E[i]).y).z);
 
-				//   glColor3f(1.0, 0.0, 0.0);
-				//   glVertex3f(2.0, 1.0, 2.0);
-				//   glVertex3f(1.0, 1.0, 2.0);
+		// 	}
+		// 	glEnd();
 
-				  glColor3f(1.0, 0.0, 0.0);
-				  glVertex3f((((ex).E[i]).x).x, (((ex).E[i]).x).y,(((ex).E[i]).x).z);
-				  glVertex3f((((ex).E[i]).y).x, (((ex).E[i]).y).y, (((ex).E[i]).y).z);
+		// 	glFlush();
 
-			}
-			glEnd();
-
-			glFlush();
-
-		}
+		// }

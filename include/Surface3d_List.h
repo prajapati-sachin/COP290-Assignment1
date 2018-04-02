@@ -9,11 +9,11 @@
 class Normal3d{
 	public:
 	//i direction
-	int i;
+	float i;
 	//j direction
-	int j;
+	float j;
 	//k direction
-	int k;
+	float k;
 
 	//emty constructor
 	Normal3d();

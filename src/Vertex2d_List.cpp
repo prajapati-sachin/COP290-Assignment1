@@ -6,7 +6,7 @@ int DELTA = 0;
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //Implementation of Vertex2d class
 //constructor for 2d Vertex
-Vertex2d::Vertex2d(int x, int y){
+Vertex2d::Vertex2d(float x, float y){
 	
 	this->x=x;
 	this->y=y;

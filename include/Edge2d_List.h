@@ -42,9 +42,9 @@ public:
 class Normal2d{
 public:
 	//i direction
-	int i;
+	float i;
 	//j direction
-	int j;
+	float j;
 	
 	//construction to construct a normal
 	Normal2d();

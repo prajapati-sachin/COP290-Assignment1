@@ -20,7 +20,7 @@ namespace extra_functions_3dvertex{
 
 
 	Vertex3d vertex3d_generate(Vertex2d front, Vertex2d top, Vertex2d side){
-		int x1,y1,z1;
+		float x1,y1,z1;
 		x1=(front.x);
 		y1=(front.y);
 		z1=(-1)*(top.y);
@@ -69,7 +69,7 @@ namespace extra_functions_3dvertex{
 Vertex3d::Vertex3d(){}
 
 
-Vertex3d::Vertex3d(int x1, int y1, int z1){
+Vertex3d::Vertex3d(float x1, float y1, float z1){
 	//constructor for 3d Vertex
 	x=x1;
 	y=y1;
@@ -87,8 +87,8 @@ Vertex3d::Vertex3d(Vertex2d front, Vertex2d top, Vertex2d side){
 }
 
 Vertex2d Vertex3d::point2d_front(){
-	int x1;
-	int y1;
+	float x1;
+	float y1;
 	//actual coordinates same as in 3d
 	x1=x;
 	y1=y;
@@ -98,8 +98,8 @@ Vertex2d Vertex3d::point2d_front(){
 
 
 Vertex2d Vertex3d::point2d_top(){
-	int x1;
-	int y1;
+	float x1;
+	float y1;
 	//in this case (x,-z) are the corresponding coordinates in XY plane
 	x1=x;
 	y1=(-1)*z;
@@ -109,8 +109,8 @@ Vertex2d Vertex3d::point2d_top(){
 
 
 Vertex2d Vertex3d::point2d_side(){
-	int x1;
-	int y1;
+	float x1;
+	float y1;
 	//in this case (-z,y) are the corresponding coordinates in XY plane
 	x1=(-1)*z;
 	y1=y;

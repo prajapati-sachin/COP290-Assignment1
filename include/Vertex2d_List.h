@@ -12,14 +12,14 @@ extern int DELTA;
 class Vertex2d{
 	public:
 	// X cordinate
-	int x;
+	float x;
 	// Y cordinate
-	int y;
+	float y;
 
 	//constructor
  	Vertex2d();
 
- 	Vertex2d (int x,int y);
+ 	Vertex2d (float x,float y);
 
  	void print_Vertex2d();
 

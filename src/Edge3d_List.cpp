@@ -5,10 +5,6 @@ using namespace std;
 
 namespace extra_functions_3dedge{
 	
-
-
-
-
 	bool equal_3dedge(Edge3d e1, Edge3d e2){
 		if((extra_functions_3dvertex::equal_3dvertex(e1.x, e2.x) && extra_functions_3dvertex::equal_3dvertex(e1.y, e2.y))|| (extra_functions_3dvertex::equal_3dvertex(e1.x, e2.y) && extra_functions_3dvertex::equal_3dvertex(e1.y, e2.x)))
 			return true;

@@ -28,14 +28,14 @@ void Edge2d::make_visible(){
 
 //function to check if point lies inside the edge
 bool Edge2d::check_inside(Vertex2d vertex){
-	int x1=this->v1.x;
-	int x2=this->v2.x;
-	int y1=this->v1.y;
-	int y2=this->v2.y;
-	int x_min = min(x1,x2);
-	int x_max = max(x1,x2);
-	int y_min = min(y1,y2);
-	int y_max = max(y1,y2);
+	float x1=this->v1.x;
+	float x2=this->v2.x;
+	float y1=this->v1.y;
+	float y2=this->v2.y;
+	float x_min = min(x1,x2);
+	float x_max = max(x1,x2);
+	float y_min = min(y1,y2);
+	float y_max = max(y1,y2);
 
 	bool x_bound = (x_min<=vertex.x)&&(vertex.x<=x_max);;
 	bool y_bound = (y_min<=vertex.y)&&(vertex.y<=y_max);;
@@ -218,14 +218,14 @@ int product_of_normal_vertex_in2d(Normal2d normal,Vertex2d vertex){
 	return ((normal.i*vertex.x)+(normal.j*vertex.y));
 }
 
-int min(int a,int b){
+float min(float a,float b){
 	if (a<b)
 		return a;
 	else
 		return b;
 }
 
-int max(int a,int b){
+float max(float a,float b){
 	if (a>b)
 		return a;
 	else

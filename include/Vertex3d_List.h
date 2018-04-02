@@ -12,14 +12,14 @@ using namespace std;
 class Vertex3d{
 	public:
 	// X cordinate
-	int x;
+	float x;
 	// Y cordinate
-	int y;
+	float y;
 	// Z cordinate
-	int z;
+	float z;
 
 	//constructor
- 	Vertex3d (int x1,int y1,int z1);
+ 	Vertex3d (float x1,float y1,float z1);
 
  	//empty construtor
  	Vertex3d ();
