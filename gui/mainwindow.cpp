@@ -140,7 +140,7 @@ void MainWindow::on_pushButton_2_clicked()
 //////////////////////
     QString filename1 = QFileDialog::getOpenFileName(this, tr("Choose text file"), "", tr("OBJ Files (*.txt *.OBJ)"));
     string text = filename1.toUtf8().constData();
-     const char * c = text.c_str();
+    const char * c = text.c_str();
 /////////////////////
 /////////////////////////////////////////////////////
 //CUBE

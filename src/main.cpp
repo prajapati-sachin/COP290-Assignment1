@@ -11,10 +11,6 @@
 #include <QtCore>
 #include <QtGui>
 #include <stdlib.h>
-#include <GL/glut.h>
-#include <X11/Xlib.h>
-#include <GL/gl.h>
-#include <GL/glu.h>
 
 
 
@@ -106,7 +102,7 @@ int main(int argc, char *argv[]){
 	//	E.print_Edge3d_List();
 
 
-	FILE * file = fopen("examples/pyramid.obj", "r");
+	FILE * file = fopen(argv[1], "r");
 	if( file == NULL ){
 	    printf("Impossible to open the file !\n");
 	    return false;
@@ -234,51 +230,51 @@ int main(int argc, char *argv[]){
 	    QPicture pi;
 	    QPainter p(&pi);
 
-		Vertex3d v1(1,1,1);
-		Vertex3d v2(1,1,2);
-		Vertex3d v3(1,2,1);
-		Vertex3d v4(1,2,2);
-		Vertex3d v5(2,1,1);
-		Vertex3d v6(2,1,2);
-		Vertex3d v7(2,2,1);
-		Vertex3d v8(2,2,2);
+		// Vertex3d v1(1,1,1);
+		// Vertex3d v2(1,1,2);
+		// Vertex3d v3(1,2,1);
+		// Vertex3d v4(1,2,2);
+		// Vertex3d v5(2,1,1);
+		// Vertex3d v6(2,1,2);
+		// Vertex3d v7(2,2,1);
+		// Vertex3d v8(2,2,2);
 
 
 		// Vertex3d v1(0,0,0);
 		// Vertex3d v2(2,0,0);
-		// Vertex3d v3(2,2,0);
-		// Vertex3d v4(0,2,0);
-		// Vertex3d v5(0.05,0.05,0.05);
+		// Vertex3d v3(2,0,2);
+		// Vertex3d v4(0,0,2);
+		// Vertex3d v5(-3,-3,-3);
 		// // Vertex3d v6(2,1,2);
 		// // Vertex3d v7(2,2,1);
 		// // Vertex3d v8(2,2,2);
 
 
 
-		V.addVertex(v1);
-		V.addVertex(v2);
-		V.addVertex(v3);
-		V.addVertex(v4);
-		V.addVertex(v5);
-		V.addVertex(v6);
-		V.addVertex(v7);
-		V.addVertex(v8);
+		// V.addVertex(v1);
+		// V.addVertex(v2);
+		// V.addVertex(v3);
+		// V.addVertex(v4);
+		// V.addVertex(v5);
+		// V.addVertex(v6);
+		// V.addVertex(v7);
+		// V.addVertex(v8);
 
 		// V.print_Vertex3d_List();
 
 
-		Edge3d e1(v1,v2);
-		Edge3d e2(v1,v3);
-		Edge3d e3(v1,v5);
-		Edge3d e4(v2,v4);
-		Edge3d e5(v2,v6);
-		Edge3d e6(v3,v4);
-		Edge3d e7(v3,v7);
-		Edge3d e8(v4,v8);
-		Edge3d e9(v5,v6);
-		Edge3d e10(v5,v7);
-		Edge3d e11(v6,v8);
-		Edge3d e12(v7,v8);
+		// Edge3d e1(v1,v2);
+		// Edge3d e2(v1,v3);
+		// Edge3d e3(v1,v5);
+		// Edge3d e4(v2,v4);
+		// Edge3d e5(v2,v6);
+		// Edge3d e6(v3,v4);
+		// Edge3d e7(v3,v7);
+		// Edge3d e8(v4,v8);
+		// Edge3d e9(v5,v6);
+		// Edge3d e10(v5,v7);
+		// Edge3d e11(v6,v8);
+		// Edge3d e12(v7,v8);
 
 		// Edge3d e1(v1,v2);
 		// Edge3d e2(v2,v3);
@@ -295,18 +291,18 @@ int main(int argc, char *argv[]){
 
 
 
-		E.addEdge(e1);
-		E.addEdge(e2);
-		E.addEdge(e3);
-		E.addEdge(e4);
-		E.addEdge(e5);
-		E.addEdge(e6);
-		E.addEdge(e7);
-		E.addEdge(e8);
-		E.addEdge(e9);
-		E.addEdge(e10);
-		E.addEdge(e11);
-		E.addEdge(e12);
+		// E.addEdge(e1);
+		// E.addEdge(e2);
+		// E.addEdge(e3);
+		// E.addEdge(e4);
+		// E.addEdge(e5);
+		// E.addEdge(e6);
+		// E.addEdge(e7);
+		// E.addEdge(e8);
+		// E.addEdge(e9);
+		// E.addEdge(e10);
+		// E.addEdge(e11);
+		// E.addEdge(e12);
 		
 
 		// FILE * file = fopen("examples/cube.txt", "r");
@@ -315,81 +311,84 @@ int main(int argc, char *argv[]){
 		//     return false;
 		// }
 
-		// Vertex2d_List front_vertices;
-		// Edge2d_List front_edges;
+Vertex2d_List front_vertices;
+     Edge2d_List front_edges;
 
-		// Vertex2d_List top_vertices;
-		// Edge2d_List top_edges;
+     Vertex2d_List top_vertices;
+     Edge2d_List top_edges;
 
-		// Vertex2d_List side_vertices;
-		// Edge2d_List side_edges;
+     Vertex2d_List side_vertices;
+     Edge2d_List side_edges;
 
-		// while(1){
-		//     char lineHeader[128];
-		//     // read the first word of the line
-		//     int res = fscanf(file, "%s", lineHeader);
-		//     if (res == EOF)
-		//         break; // EOF = End Of File. Quit the loop.
-		//     // else : parse lineHeader
-		//     else{
-		//     	//vertex of front projection
-		//     	if ( strcmp( lineHeader, "fv" ) == 0 ){
-		// 	    	int x,y;
-		// 	    	fscanf(file, "%d %d\n", &x, &y);
-		// 	    	Vertex2d v(x,y);
-		// 	    	front_vertices.addVertex(v);
-		// 	    }
-		//     	//vertex of top projection
-		//     	else if ( strcmp( lineHeader, "tv" ) == 0 ){
-		// 	    	int x,y;
-		// 	    	fscanf(file, "%d %d\n", &x, &y);
-		// 	    	Vertex2d v(x,y);
-		// 	    	top_vertices.addVertex(v);
-		// 	    }
-		// 	    //vertex of side projection
-		// 	    else if ( strcmp( lineHeader, "sv" ) == 0 ){
-		// 	    	int x,y;
-		// 	    	fscanf(file, "%d %d\n", &x, &y);
-		// 	    	Vertex2d v(x,y);
-		// 	    	side_vertices.addVertex(v);
-		// 	    }
-		//     	//edge of front projection
-		//     	else if ( strcmp( lineHeader, "fe" ) == 0 ){
-		// 		    int x,y;
-		// 		    fscanf(file, "%d %d\n", &x, &y);
-						
-		// 			Edge2d e(front_vertices.V[x], front_vertices.V[y]);	
-		// 			front_edges.addEdge(e);
-		// 		}
-		//     	//edge of top projection
-		//     	else if ( strcmp( lineHeader, "te" ) == 0 ){
-		// 		    int x,y;
-		// 		    fscanf(file, "%d %d\n", &x, &y);
-						
-		// 			Edge2d e(top_vertices.V[x], top_vertices.V[y]);	
-		// 			top_edges.addEdge(e);
-		// 		}
-		// 		//edge of side projection
-		//     	else if ( strcmp( lineHeader, "se" ) == 0 ){
-		// 		    int x,y;
-		// 		    fscanf(file, "%d %d\n", &x, &y);
-						
-		// 			Edge2d e(side_vertices.V[x], side_vertices.V[y]);	
-		// 			side_edges.addEdge(e);
-		// 		}
-		//     }
-		    
-		// }
+     FILE * file = fopen(argv[1], "r");
+     if( file == NULL ){
+         printf("Impossible to open the file !\n");
+       //  return false;
+     }
 
+     while(1){
+         char lineHeader[128];
+         // read the first word of the line
+         int res = fscanf(file, "%s", lineHeader);
+         if (res == EOF)
+             break; // EOF = End Of File. Quit the loop.
+         // else : parse lineHeader
+         else{
+            //vertex of front projection
+            if ( strcmp( lineHeader, "fv" ) == 0 ){
+                float x,y;
+                fscanf(file, "%f %f\n", &x, &y);
+                Vertex2d v(x,y);
+                front_vertices.addVertex(v);
+            }
+            //vertex of top projection
+            else if ( strcmp( lineHeader, "tv" ) == 0 ){
+                float x,y;
+                fscanf(file, "%f %f\n", &x, &y);
+                Vertex2d v(x,y);
+                top_vertices.addVertex(v);
+            }
+            //vertex of side projection
+            else if ( strcmp( lineHeader, "sv" ) == 0 ){
+                float x,y;
+                fscanf(file, "%f %f\n", &x, &y);
+                Vertex2d v(x,y);
+                side_vertices.addVertex(v);
+            }
+            //edge of front projection
+            else if ( strcmp( lineHeader, "fe" ) == 0 ){
+                int x,y;
+                fscanf(file, "%d %d\n", &x, &y);
 
-		// Projection2d front_projection(front_vertices, front_edges);
+                Edge2d e(front_vertices.V[x], front_vertices.V[y]);
+                front_edges.addEdge(e);
+            }
+            //edge of top projection
+            else if ( strcmp( lineHeader, "te" ) == 0 ){
+                int x,y;
+                fscanf(file, "%d %d\n", &x, &y);
 
-		// Projection2d top_projection(top_vertices, top_edges);
+                Edge2d e(top_vertices.V[x], top_vertices.V[y]);
+                top_edges.addEdge(e);
+            }
+            //edge of side projection
+            else if ( strcmp( lineHeader, "se" ) == 0 ){
+                int x,y;
+                fscanf(file, "%d %d\n", &x, &y);
 
-		// Projection2d side_projection(side_vertices, side_edges);
+                Edge2d e(side_vertices.V[x], side_vertices.V[y]);
+                side_edges.addEdge(e);
+            }
+         }
 
+     }
 
 
+     Projection2d front_projection(front_vertices, front_edges);
+
+     Projection2d top_projection(top_vertices, top_edges);
+
+     Projection2d side_projection(side_vertices, side_edges);
 
 
 
@@ -404,57 +403,58 @@ int main(int argc, char *argv[]){
 
 		//E.print_Edge3d_List();
 
-		Solid3d solid(V,E,F);
+		// Solid3d solid(V,E,F);
 
-		Projection2d front_projection = solid.make_front_projections();
+		// Projection2d front_projection = solid.make_front_projections();
 
-		Projection2d top_projection = solid.make_top_projections();
+		// Projection2d top_projection = solid.make_top_projections();
 
-		Projection2d side_projection = solid.make_side_projections();
+		// Projection2d side_projection = solid.make_side_projections();
 
 
-		(front_projection.V).print_Vertex2d_List();
+//		(front_projection.V).print_Vertex2d_List();
 
-		(front_projection.E).print_Edge2d_List();
+//		(front_projection.E).print_Edge2d_List();
 //////////////////////////////////////////////////////////////////////////////////////////////////
-		for(int i=0;i<((front_projection.V).V).size();i++){
-			printf("fv ");
-			printf("%f %f\n",((front_projection.V).V)[i].x,((front_projection.V).V)[i].y );
-		}
+//FOR MAKING TXT SAMPLE FOR 2D-3D
+		// for(int i=0;i<((front_projection.V).V).size();i++){
+		// 	printf("fv ");
+		// 	printf("%f %f\n",((front_projection.V).V)[i].x,((front_projection.V).V)[i].y );
+		// }
  
 
-		for(int i=0;i<((front_projection.E).E).size();i++){
-			printf("fe ");
-			int i1 = vertex_indexin2d((front_projection.V.V),(front_projection.E).E[i].v1);
-			int i2 = vertex_indexin2d((front_projection.V.V),(front_projection.E).E[i].v2);
-			printf("%d %d\n",i1,i2);
-		}
+		// for(int i=0;i<((front_projection.E).E).size();i++){
+		// 	printf("fe ");
+		// 	int i1 = vertex_indexin2d((front_projection.V.V),(front_projection.E).E[i].v1);
+		// 	int i2 = vertex_indexin2d((front_projection.V.V),(front_projection.E).E[i].v2);
+		// 	printf("%d %d\n",i1,i2);
+		// }
 
-		for(int i=0;i<((top_projection.V).V).size();i++){
-			printf("tv ");
-			printf("%f %f\n",((top_projection.V).V)[i].x,((top_projection.V).V)[i].y );
-		}
+		// for(int i=0;i<((top_projection.V).V).size();i++){
+		// 	printf("tv ");
+		// 	printf("%f %f\n",((top_projection.V).V)[i].x,((top_projection.V).V)[i].y );
+		// }
  
 
-		for(int i=0;i<((top_projection.E).E).size();i++){
-			printf("te ");
-			int i1 = vertex_indexin2d((top_projection.V.V),(top_projection.E).E[i].v1);
-			int i2 = vertex_indexin2d((top_projection.V.V),(top_projection.E).E[i].v2);
-			printf("%d %d\n",i1,i2);
-		}
+		// for(int i=0;i<((top_projection.E).E).size();i++){
+		// 	printf("te ");
+		// 	int i1 = vertex_indexin2d((top_projection.V.V),(top_projection.E).E[i].v1);
+		// 	int i2 = vertex_indexin2d((top_projection.V.V),(top_projection.E).E[i].v2);
+		// 	printf("%d %d\n",i1,i2);
+		// }
 
-		for(int i=0;i<((side_projection.V).V).size();i++){
-			printf("sv ");
-			printf("%f %f\n",((side_projection.V).V)[i].x,((side_projection.V).V)[i].y );
-		}
+		// for(int i=0;i<((side_projection.V).V).size();i++){
+		// 	printf("sv ");
+		// 	printf("%f %f\n",((side_projection.V).V)[i].x,((side_projection.V).V)[i].y );
+		// }
  
 
-		for(int i=0;i<((side_projection.E).E).size();i++){
-			printf("se ");
-			int i1 = vertex_indexin2d((side_projection.V.V),(side_projection.E).E[i].v1);
-			int i2 = vertex_indexin2d((side_projection.V.V),(side_projection.E).E[i].v2);
-			printf("%d %d\n",i1,i2);
-		}
+		// for(int i=0;i<((side_projection.E).E).size();i++){
+		// 	printf("se ");
+		// 	int i1 = vertex_indexin2d((side_projection.V.V),(side_projection.E).E[i].v1);
+		// 	int i2 = vertex_indexin2d((side_projection.V.V),(side_projection.E).E[i].v2);
+		// 	printf("%d %d\n",i1,i2);
+		// }
 /////////////////////////////////////////////////////////////////////////////////////////////////////
 //		(top_projection.V).print_Vertex2d_List();
 
