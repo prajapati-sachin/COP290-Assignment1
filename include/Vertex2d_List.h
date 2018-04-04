@@ -50,5 +50,7 @@ class Vertex2d_List{
 //function to check if two 2d_cordinates are equal
 bool equal_2dVertex(Vertex2d v1,Vertex2d v2);
 
+int vertex_indexin2d(vector<Vertex2d> vlist, Vertex2d v);
+
 
 #endif

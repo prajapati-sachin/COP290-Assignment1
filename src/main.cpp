@@ -413,10 +413,49 @@ int main(int argc, char *argv[]){
 		Projection2d side_projection = solid.make_side_projections();
 
 
-	//	(front_projection.V).print_Vertex2d_List();
+		(front_projection.V).print_Vertex2d_List();
 
-	//	(front_projection.E).print_Edge2d_List();
+		(front_projection.E).print_Edge2d_List();
+//////////////////////////////////////////////////////////////////////////////////////////////////
+		for(int i=0;i<((front_projection.V).V).size();i++){
+			printf("fv ");
+			printf("%f %f\n",((front_projection.V).V)[i].x,((front_projection.V).V)[i].y );
+		}
  
+
+		for(int i=0;i<((front_projection.E).E).size();i++){
+			printf("fe ");
+			int i1 = vertex_indexin2d((front_projection.V.V),(front_projection.E).E[i].v1);
+			int i2 = vertex_indexin2d((front_projection.V.V),(front_projection.E).E[i].v2);
+			printf("%d %d\n",i1,i2);
+		}
+
+		for(int i=0;i<((top_projection.V).V).size();i++){
+			printf("tv ");
+			printf("%f %f\n",((top_projection.V).V)[i].x,((top_projection.V).V)[i].y );
+		}
+ 
+
+		for(int i=0;i<((top_projection.E).E).size();i++){
+			printf("te ");
+			int i1 = vertex_indexin2d((top_projection.V.V),(top_projection.E).E[i].v1);
+			int i2 = vertex_indexin2d((top_projection.V.V),(top_projection.E).E[i].v2);
+			printf("%d %d\n",i1,i2);
+		}
+
+		for(int i=0;i<((side_projection.V).V).size();i++){
+			printf("sv ");
+			printf("%f %f\n",((side_projection.V).V)[i].x,((side_projection.V).V)[i].y );
+		}
+ 
+
+		for(int i=0;i<((side_projection.E).E).size();i++){
+			printf("se ");
+			int i1 = vertex_indexin2d((side_projection.V.V),(side_projection.E).E[i].v1);
+			int i2 = vertex_indexin2d((side_projection.V.V),(side_projection.E).E[i].v2);
+			printf("%d %d\n",i1,i2);
+		}
+/////////////////////////////////////////////////////////////////////////////////////////////////////
 //		(top_projection.V).print_Vertex2d_List();
 
 //		(top_projection.E).print_Edge2d_List();	

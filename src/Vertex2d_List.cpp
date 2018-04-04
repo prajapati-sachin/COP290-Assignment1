@@ -70,4 +70,14 @@ bool equal_2dVertex(Vertex2d v1,Vertex2d v2){
 	return (((v1.x-v2.x)==DELTA)&&((v1.y-v2.y)==DELTA));
 }
 
+int vertex_indexin2d(vector<Vertex2d> vlist, Vertex2d v){
+	int result=-1;
+	for(int i=0;i<vlist.size();i++){
+		if(equal_2dVertex(vlist[i],v)){
+			result=i;
+		}
+	}
+	return result;
+}
+
 
