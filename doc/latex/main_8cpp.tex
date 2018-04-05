@@ -1,0 +1,117 @@
+\hypertarget{main_8cpp}{}\section{src/main.cpp File Reference}
+\label{main_8cpp}\index{src/main.\+cpp@{src/main.\+cpp}}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include \char`\"{}../include/\+Edge3d\+\_\+\+List.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../include/\+Edge2d\+\_\+\+List.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../include/\+Hidden\+Lines.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../include/\+Projection2d.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../include/\+Solid3d.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../include/\+Surface3d\+\_\+\+List.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../include/\+Vertex2d\+\_\+\+List.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../include/\+Vertex3d\+\_\+\+List.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$math.\+h$>$}\\*
+{\ttfamily \#include $<$Qt\+Core$>$}\\*
+{\ttfamily \#include $<$Qt\+Gui$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+Include dependency graph for main.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{main_8cpp_a598a3330b3c21701223ee0ca14316eca}{PI}~3.\+1415926536
+\item 
+\#define \hyperlink{main_8cpp_a70ed59adcb4159ac551058053e649640}{S\+I\+ZE}~200
+\item 
+\#define \hyperlink{main_8cpp_a63c7acef5369ac4e5fd5f852ee1720e0}{F\+A\+C\+T\+OR}~100
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{main_8cpp_a2858154e2009b0e6e616f313177762bc}{init} (void)
+\item 
+void \hyperlink{main_8cpp_a4ea013001a5fb47853d0fab8f8de35cd}{display} (void)
+\item 
+int \hyperlink{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{main} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const float \hyperlink{main_8cpp_a22a8bcfa9f0309676ac74f599b2bbd39}{S\+T\+EP} = 2$\ast$\hyperlink{main_8cpp_a598a3330b3c21701223ee0ca14316eca}{PI}/\hyperlink{main_8cpp_a70ed59adcb4159ac551058053e649640}{S\+I\+ZE}
+\item 
+Edge2d\+\_\+\+List \hyperlink{main_8cpp_a2d213a7b47b460d6939b6dd4510a905b}{ex}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{main.\+cpp@{main.\+cpp}!F\+A\+C\+T\+OR@{F\+A\+C\+T\+OR}}
+\index{F\+A\+C\+T\+OR@{F\+A\+C\+T\+OR}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{F\+A\+C\+T\+OR}{FACTOR}}]{\setlength{\rightskip}{0pt plus 5cm}\#define F\+A\+C\+T\+OR~100}\hypertarget{main_8cpp_a63c7acef5369ac4e5fd5f852ee1720e0}{}\label{main_8cpp_a63c7acef5369ac4e5fd5f852ee1720e0}
+
+
+Definition at line 19 of file main.\+cpp.
+
+\index{main.\+cpp@{main.\+cpp}!PI@{PI}}
+\index{PI@{PI}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{PI}{PI}}]{\setlength{\rightskip}{0pt plus 5cm}\#define PI~3.\+1415926536}\hypertarget{main_8cpp_a598a3330b3c21701223ee0ca14316eca}{}\label{main_8cpp_a598a3330b3c21701223ee0ca14316eca}
+
+
+Definition at line 17 of file main.\+cpp.
+
+\index{main.\+cpp@{main.\+cpp}!S\+I\+ZE@{S\+I\+ZE}}
+\index{S\+I\+ZE@{S\+I\+ZE}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{S\+I\+ZE}{SIZE}}]{\setlength{\rightskip}{0pt plus 5cm}\#define S\+I\+ZE~200}\hypertarget{main_8cpp_a70ed59adcb4159ac551058053e649640}{}\label{main_8cpp_a70ed59adcb4159ac551058053e649640}
+
+
+Definition at line 18 of file main.\+cpp.
+
+
+
+\subsection{Function Documentation}
+\index{main.\+cpp@{main.\+cpp}!display@{display}}
+\index{display@{display}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{display(void)}{display(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void display (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8cpp_a4ea013001a5fb47853d0fab8f8de35cd}{}\label{main_8cpp_a4ea013001a5fb47853d0fab8f8de35cd}
+\index{main.\+cpp@{main.\+cpp}!init@{init}}
+\index{init@{init}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{init(void)}{init(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8cpp_a2858154e2009b0e6e616f313177762bc}{}\label{main_8cpp_a2858154e2009b0e6e616f313177762bc}
+\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{main(int argc, char $\ast$argv[])}{main(int argc, char *argv[])}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}{}\label{main_8cpp_a0ddf1224851353fc92bfbff6f499fa97}
+
+
+Definition at line 29 of file main.\+cpp.
+
+
+
+\subsection{Variable Documentation}
+\index{main.\+cpp@{main.\+cpp}!ex@{ex}}
+\index{ex@{ex}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{ex}{ex}}]{\setlength{\rightskip}{0pt plus 5cm}Edge2d\+\_\+\+List ex}\hypertarget{main_8cpp_a2d213a7b47b460d6939b6dd4510a905b}{}\label{main_8cpp_a2d213a7b47b460d6939b6dd4510a905b}
+
+
+Definition at line 27 of file main.\+cpp.
+
+\index{main.\+cpp@{main.\+cpp}!S\+T\+EP@{S\+T\+EP}}
+\index{S\+T\+EP@{S\+T\+EP}!main.\+cpp@{main.\+cpp}}
+\subsubsection[{\texorpdfstring{S\+T\+EP}{STEP}}]{\setlength{\rightskip}{0pt plus 5cm}const float S\+T\+EP = 2$\ast${\bf PI}/{\bf S\+I\+ZE}}\hypertarget{main_8cpp_a22a8bcfa9f0309676ac74f599b2bbd39}{}\label{main_8cpp_a22a8bcfa9f0309676ac74f599b2bbd39}
+
+
+Definition at line 21 of file main.\+cpp.
+
