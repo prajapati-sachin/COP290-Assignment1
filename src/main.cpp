@@ -107,9 +107,9 @@ int main(int argc, char *argv[]){
 	    printf("Impossible to open the file !\n");
 	    return false;
 	}
-
+	int EndFile = 0;
 	while(1){
-
+		int u=1;
 	    char lineHeader[128];
 	    // read the first word of the line
 	    int res = fscanf(file, "%s", lineHeader);
@@ -124,22 +124,66 @@ int main(int argc, char *argv[]){
 		    	V.addVertex(v);
 		    }
 	    	else if ( strcmp( lineHeader, "f" ) == 0 ){
-			    int x,y,z;
-			    fscanf(file, "%d %d %d\n", &x, &y, &z);
+			    int x,y,first;
+			 	//cout << "f ";
+			 	//cout << "1";
+			 	
+			 	//fscanf(file, "%d %d %d\n", &x, &y, &z);
 					
-				Edge3d e1(V.V[x-1],V.V[y-1]);	
-				Edge3d e2(V.V[y-1],V.V[z-1]);
-				Edge3d e3(V.V[x-1],V.V[z-1]);
-				E.addEdge(e1);
-				E.addEdge(e2);
-				E.addEdge(e3);
+				// Edge3d e1(V.V[x-1],V.V[y-1]);	
+				// Edge3d e2(V.V[y-1],V.V[z-1]);
+				// Edge3d e3(V.V[x-1],V.V[z-1]);
+				// E.addEdge(e1);
+				// E.addEdge(e2);
+				// E.addEdge(e3);
+				/////////////////////////////////////
+				fscanf(file, "%d", &x);
+				//cout << x;
+				//cout << "2";
+				first=x;
+				
+				while(1){
+					char c;
+					fscanf(file, "%c" , &c);
+					if(c==' '){
+					//	cout << "3";
+					//	 cout << ' ';
+					//	cout << "I am the bug";
+					}
+					else if(c == EOF){
+                        EndFile =1;
+                        Edge3d e1(V.V[x-1],V.V[first-1]);
+						E.addEdge(e1);	
+                        break;
+                    }
+					else if(c=='\n'){
+					//	cout << '\n';
+					//	cout << "4";
+						Edge3d e1(V.V[x-1],V.V[first-1]);
+						E.addEdge(e1);
+						break;
+					}
+					fscanf(file, "%d", &y);
+						//	cout <<u;
+					//	cout << y;
+						//cout << "5";
+						Edge3d e1(V.V[x-1],V.V[y-1]);
+						E.addEdge(e1);
+						x=y;
+					
+				}
+				u++;
+				if(EndFile ==1){
+					break;
+				}
+
 			}
 	    }
 	    
 	}
-
-		V.print_Vertex3d_List();
-		E.print_Edge3d_List();
+// OBJ Parder reference from - https://github.com/saranshiitd/cop_assignment1
+		// V.print_Vertex3d_List();
+		// E.print_Edge3d_List();
 
 		Solid3d solid(V,E,F);
 
@@ -183,7 +227,7 @@ int main(int argc, char *argv[]){
 		p.setRenderHint(QPainter::Antialiasing);
 		p.setPen(QPen(Qt::black, 1, Qt::SolidLine, Qt::SquareCap));
 		for(int i=0;i<((front_projection.E).E).size();i++){
-	   		 p.drawLine(((((((front_projection.E).E)[i]).v1).x)+1)*100,((((((front_projection.E).E)[i]).v1).y)+1)*100, ((((((front_projection.E).E)[i]).v2).x)+1)*100, ((((((front_projection.E).E)[i]).v2).y)+1)*100);
+	   		 p.drawLine(((((((front_projection.E).E)[i]).v1).x)+1)*100,((((((front_projection.E).E)[i]).v1).y)+4)*100, ((((((front_projection.E).E)[i]).v2).x)+1)*100, ((((((front_projection.E).E)[i]).v2).y)+4)*100);
 	   	}
 
 		for(int i=0;i<((top_projection.E).E).size();i++){
@@ -191,7 +235,7 @@ int main(int argc, char *argv[]){
 	   	}
 
 	   	for(int i=0;i<((side_projection.E).E).size();i++){
-	   		 p.drawLine(((((((side_projection.E).E)[i]).v1).x)-1)*100,((((((side_projection.E).E)[i]).v1).y)+1)*100, ((((((side_projection.E).E)[i]).v2).x)-1)*100, ((((((side_projection.E).E)[i]).v2).y)+1)*100);
+	   		 p.drawLine((((((side_projection.E).E)[i]).v1).x-1)*(100),((((((side_projection.E).E)[i]).v1).y)+4)*100, ((((((side_projection.E).E)[i]).v2).x)-1)*(100), ((((((side_projection.E).E)[i]).v2).y)+4)*100);
 	   	}
 	   	// for(int i=0;i<((front_projection.V).V).size();i++){
 	   	// 	 p.drawPoint((((front_projection.V).V[i]).x),(((front_projection.V).V[i]).y));
@@ -211,6 +255,9 @@ int main(int argc, char *argv[]){
 	 //   	p.drawLine(0,0,0,-5);
 
 	//   	p.drawPoint(-1,1);
+	   	p.drawText(25,25,"Front view");
+    	p.drawText(25,-15,"Top view");
+    	p.drawText(-100,25,"Side view");
 
 	   	p.end(); // Don't forget this line!
 	   	l.setPicture(pi);
