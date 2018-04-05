@@ -255,9 +255,9 @@ int main(int argc, char *argv[]){
 	 //   	p.drawLine(0,0,0,-5);
 
 	//   	p.drawPoint(-1,1);
-	   	p.drawText(25,25,"Front view");
-    	p.drawText(25,-15,"Top view");
-    	p.drawText(-100,25,"Side view");
+	   	// p.drawText(25,25,"Front view");
+    	// p.drawText(25,-15,"Top view");
+    	// p.drawText(-100,25,"Side view");
 
 	   	p.end(); // Don't forget this line!
 	   	l.setPicture(pi);
