@@ -7,7 +7,7 @@ This module can be used to:-
 
 ### Installing
 
-	The GUI folder contains an executable named "app" which can run on Linux systems. 
+	The GUI folder contains an standalone executable named "app" which can run on Linux systems. 
 	Make the app executable by running 
 
 	chmod a+x app
