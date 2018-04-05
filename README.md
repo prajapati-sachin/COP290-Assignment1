@@ -1,6 +1,7 @@
 # Software for Engineering Drawing
 This module can be used to:-
 1) Generate 2D projections from an OBJ (.obj) file.
+![Projections](/doc/3d-2d.png?raw=true "Projections")
 2) Regenerate 3D model from isometric projections.
 
 ### Installing
