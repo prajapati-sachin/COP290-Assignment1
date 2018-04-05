@@ -12,6 +12,10 @@ TARGET = cop
 TEMPLATE = app
 CONFIG+= static
 
+DESTDIR = bin
+OBJECTS_DIR = build
+MOC_DIR = build
+
 SOURCES += main.cpp\
         mainwindow.cpp \
         Common_functions.cpp\
