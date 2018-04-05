@@ -2,11 +2,12 @@
 This module can be used to:-
 1) Generate 2D projections from an OBJ (.obj) file.
 ![Projections](/doc/3d-2d.png?raw=true "Projections")
-2) Regenerate 3D model from isometric projections.
+2) Regenerate Isometric View of Object from orthographic projections.
+![Isometric view of object](/doc/2d-3d.png?raw=true "Isometric view of object")
 
 ### Installing
 
-	The GUI folder contains an executable named "app" which can run on Linux systems. 
+	The GUI folder contains an standalone executable named "app" which can run on Linux systems. 
 	Make the app executable by running 
 
 	chmod a+x app
