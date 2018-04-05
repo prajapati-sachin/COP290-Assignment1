@@ -109,6 +109,7 @@ int main(int argc, char *argv[]){
 	}
 	int EndFile = 0;
 	while(1){
+
 		int u=1;
 	    char lineHeader[128];
 	    // read the first word of the line
@@ -164,13 +165,13 @@ int main(int argc, char *argv[]){
 						break;
 					}
 					fscanf(file, "%d", &y);
-						//	cout <<u;
+							cout <<u;
 					//	cout << y;
 						//cout << "5";
 						Edge3d e1(V.V[x-1],V.V[y-1]);
 						E.addEdge(e1);
 						x=y;
-					
+						
 				}
 				u++;
 				if(EndFile ==1){
@@ -181,6 +182,7 @@ int main(int argc, char *argv[]){
 	    }
 	    
 	}
+		cout << "File read completely";
 // OBJ Parder reference from - https://github.com/saranshiitd/cop_assignment1
 		// V.print_Vertex3d_List();
 		// E.print_Edge3d_List();
