@@ -27,6 +27,8 @@ make
 2) Input for 2D-3D is a text file which contains the information about projections in 3 views (front, top, side views). The text file contains the position of vertices and edges for each projection. Some demo files are in the examples folder.
 
 In these text files:-
+
+
 fv 1 0 -> denotes a vertex (1,0) in front projection and similarly for tv and sv which denote vertex in top and side view respectively.  
 
 
